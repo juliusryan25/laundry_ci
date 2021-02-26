@@ -22,11 +22,11 @@
 
                     <tbody>
                         <?php
-                            if($c_user){
+                            if($c_user>0){
                             foreach ($user as $datas){
                         ?>
                             <tr style="text-align: center">
-                                <td><?php echo $datas->id;?></td>
+                                <td><?php echo $datas->id_user;?></td>
                                 <td><?php echo $datas->username;?></td>
                                 <td><?php echo $datas->email;?></td>
                                 <td><?php echo $datas->no_telp;?></td>

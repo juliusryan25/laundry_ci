@@ -16,6 +16,9 @@
             else if($this->session->userdata('status_log')== 'Online'  && $this->session->userdata('stat') == 'kasir'){
                 redirect('kasir/indexkasir/homekasir/'.$this->session->userdata('usernama'));
             }
+            else if($this->session->userdata('status_log')== 'Online'  && $this->session->userdata('stat') == 'owner'){
+                redirect('owner/indexowner/homeowner/'.$this->session->userdata('usernama'));
+            }           
         }
 
         public function index1(){
@@ -180,20 +183,20 @@
             $this->load->view('pdf_datauser_priview',$data);
         }
 
-        public function cetak_pdf(){
+        public function cetakDataUser_pdf(){
             ob_start();
 
             //butuh view untuk load tablenya
             $data['c_user']= $this->modelsistem->count_user();
             $data['user']= $this->modelsistem->get_user();
-            $this->load->view('pdf_datauser_priview',$data);
+            $this->load->view('cetak/pdf_datauser_priview',$data);
 
             $html = ob_get_contents();
             ob_end_clean();
-
+    
             //folder asset
             require'./assets/html2pdf/autoload.php';
-
+    
             $pdf = new Spipu\Html2Pdf\Html2Pdf('P','A4','en');
             $pdf->WriteHTML($html);
 
@@ -202,14 +205,14 @@
 
         }
 
-        public function cetak_excel(){
+        public function cetakDataUser_excel(){
             header('Content-Type: application / vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attachment;filename="Data_User.xls"');
             //namafilenya//
             header('Cache-Control: max-age=0');
 
             $data['user']=$this->modelsistem->get_user();
-            $this->load->view('excel_preview',$data);
+            $this->load->view('cetak/excel_datauser_preview',$data);
 
         }
 
@@ -237,6 +240,39 @@
 
         public function aksi_edit(){
             $this->modelsistem->edit_db();
+        }
+
+        public function cetakDataMember_pdf(){
+            ob_start();
+
+            //butuh view untuk load tablenya
+            $data['c_member']= $this->modelsistem->count_member();
+            $data['member']= $this->modelsistem->get_member();
+            $this->load->view('cetak/pdf_datamember_preview',$data);
+
+            $html = ob_get_contents();
+            ob_end_clean();
+    
+            //folder asset
+            require'./assets/html2pdf/autoload.php';
+    
+            $pdf = new Spipu\Html2Pdf\Html2Pdf('P','A4','en');
+            $pdf->WriteHTML($html);
+
+            //Nama File
+            $pdf->Output('Data_Member_'.date('d-m-Y').'.pdf','D');
+
+        }
+
+        public function cetakDataMember_excel(){
+            header('Content-Type: application / vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="Data_Member.xls"');
+            //namafilenya//
+            header('Cache-Control: max-age=0');
+
+            $data['member']=$this->modelsistem->get_member();
+            $this->load->view('cetak/excel_datamember_preview',$data);
+
         }
 
 
@@ -267,6 +303,40 @@
             $this->modelsistem->edit_db_outlet();
         }
 
+        public function cetakDataOutlet_pdf(){
+            ob_start();
+
+            //butuh view untuk load tablenya
+            $data['c_outlet']= $this->modelsistem->count_outlet();
+            $data['outlet']= $this->modelsistem->get_outlet();
+            $this->load->view('cetak/pdf_dataoutlet_preview',$data);
+
+            $html = ob_get_contents();
+            ob_end_clean();
+    
+            //folder asset
+            require'./assets/html2pdf/autoload.php';
+    
+            $pdf = new Spipu\Html2Pdf\Html2Pdf('P','A4','en');
+            $pdf->WriteHTML($html);
+
+            //Nama File
+            $pdf->Output('Data_Outlet_'.date('d-m-Y').'.pdf','D');
+
+        }
+
+        public function cetakDataOutlet_excel(){
+            header('Content-Type: application / vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="Data_Outlet.xls"');
+            //namafilenya//
+            header('Cache-Control: max-age=0');
+
+            $data['outlet']=$this->modelsistem->get_outlet();
+            $this->load->view('cetak/excel_dataoutlet_preview',$data);
+
+        }
+
+
 
           ///paket///
           public function paket(){
@@ -295,6 +365,38 @@
             $this->modelsistem->edit_db_paket();
         }
       
+        public function cetakDataPackage_pdf(){
+            ob_start();
+
+            //butuh view untuk load tablenya
+            $data['c_paket']= $this->modelsistem->count_paket();
+            $data['paket']= $this->modelsistem->get_paket();
+            $this->load->view('cetak/pdf_datapaket_preview',$data);
+
+            $html = ob_get_contents();
+            ob_end_clean();
+    
+            //folder asset
+            require'./assets/html2pdf/autoload.php';
+    
+            $pdf = new Spipu\Html2Pdf\Html2Pdf('P','A4','en');
+            $pdf->WriteHTML($html);
+
+            //Nama File
+            $pdf->Output('Data_Package_'.date('d-m-Y').'.pdf','D');
+
+        }
+
+        public function cetakDataPackage_excel(){
+            header('Content-Type: application / vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="Data_Package.xls"');
+            //namafilenya//
+            header('Cache-Control: max-age=0');
+
+            $data['paket']=$this->modelsistem->get_paket();
+            $this->load->view('cetak/excel_datapaket_preview',$data);
+
+        }
         //report//
         public function report(){
             $judul['title'] = "report";
@@ -473,6 +575,39 @@
             echo json_encode($result);
              
          }
+
+         public function cetakDataTransaksi_pdf(){
+            ob_start();
+
+            //butuh view untuk load tablenya
+            $data['c_transaksi']= $this->modelsistem->count_transaksi();
+            $data['transaksi']= $this->modelsistem->get_transaksi();
+            $this->load->view('cetak/pdf_datatransaksi_preview',$data);
+
+            $html = ob_get_contents();
+            ob_end_clean();
+    
+            //folder asset
+            require'./assets/html2pdf/autoload.php';
+    
+            $pdf = new Spipu\Html2Pdf\Html2Pdf('L','A4','en');
+            $pdf->WriteHTML($html);
+
+            //Nama File
+            $pdf->Output('Data_Transaksi_'.date('d-m-Y').'.pdf','D');
+
+        }
+
+        public function cetakDataTransaksi_excel(){
+            header('Content-Type: application / vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="Data_Transaksi.xls"');
+            //namafilenya//
+            header('Cache-Control: max-age=0');
+
+            $data['transaksi']=$this->modelsistem->get_transaksi();
+            $this->load->view('cetak/excel_datatransaksi_preview',$data);
+
+        }
 
 
     }

@@ -304,14 +304,12 @@
         for(var i = 0;i < data.length;i++){
           baris += '<tr>'+
                       '<td>'+ data[i].id_transaksi + '</td>'+
-                      '<td>'+ data[i].id_outlet + ' </td>'+
-                      // '<td>'+ data[i].kode_invoice + ' </td>'+
+                      '<td>'+ data[i].id_outlet + ' </td>'+                      
                       '<td>'+ data[i].id_member + ' </td>'+
                       '<td>'+ data[i].keterangan + ' </td>'+
                       '<td>'+ data[i].nama_paket + ' </td>'+
                       '<td>'+ data[i].tgl_order + ' </td>'+
-                      '<td>'+ data[i].tgl_bayar + ' </td>'+                
-                      // '<td>'+ data[i].biaya_tambahan + ' </td>'+
+                      '<td>'+ data[i].tgl_bayar + ' </td>'+                                    
                       '<td>'+ data[i].diskon + ' </td>'+
                       '<td>'+ data[i].pajak + ' </td>'+
                       '<td>'+ data[i].status + ' </td>'+
@@ -320,13 +318,11 @@
                       '<td>'+ data[i].kembalian + ' </td>'+
                       '<td>'+ data[i].status_bayar + ' </td>'+
                       '<td>'+ data[i].id_user+ ' </td>'+          
-                      '<td><a href="#form" data-toggle="modal" class="btn btn-success col-12" onclick="submit('+data[i].id_transaksi+')"><i class="fas fa-edit"></i></a><a onclick="hapusdata('+data[i].id_transaksi+')" class="btn btn-danger col-12 mt-2"><i class="fas fa-trash"></i> </a></td>'+            
-                      
+                      '<td><a href="#form" data-toggle="modal" class="btn btn-success col-12" onclick="submit('+data[i].id_transaksi+')"><i class="fas fa-edit"></i></a><a onclick="hapusdata('+data[i].id_transaksi+')" class="btn btn-danger col-12 mt-2"><i class="fas fa-trash"></i> </a></td>'+                                  
                     '</tr>';
         }
         $('#targetdata').html(baris);
-      
-        // console.log(data);
+   
       }
       });
     }

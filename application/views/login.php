@@ -10,12 +10,12 @@
 <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="card" style="max-width: 100%; margin-top: 7%;margin-bottom: 7%;border-color: dodgerblue;">
+                <div class="card" style="max-width: 100%; margin-top: 7%;margin-bottom: 7%;border-color: dodgerblue;border-radius:15px">
                     <div class="row no-gutters">
                       <div class="col-md-4" style="margin-top: 7%;">
                       <img src="<?php echo base_url(); ?>assets/image/lon.png" class="card-img" alt="...">
                       </div>
-                      <div class="col-md-8" style="background:linear-gradient(to right,white,dodgerblue);">
+                      <div class="col-md-8" style="background:linear-gradient(to right,white,dodgerblue);border-radius:14px">
                         <div class="card-body" style="margin: 14%;">
                           <center>
                           <h4 class="card-title" style="color: white;">Login</h4>

@@ -72,6 +72,12 @@
 		              <span class="list">Member</span>
 		            </a>
 		          </li>
+				  <li>
+		            <a href="<?php echo site_url('kasir/indexkasir/transaksi'); ?>">
+		              <span class="icon"><i class="fas fa-file-archive"></i></span>
+		              <span class="list">Transaction</span>
+		            </a>
+		          </li>
 		          <li>
 		            <a href="<?php echo site_url('kasir/indexkasir/report'); ?>">
 		              <span class="icon"><i class="fas fa-file-archive"></i></span>
@@ -102,7 +108,7 @@
 					?>
 				<!-- <div class="item_wrap" >
 	    		<div class="item"> -->
-       <?php 
+      <?php 
         
         
         if ($this->uri->segment(3) == "memberkasir") {
@@ -111,8 +117,12 @@
           }
        
 		  
-		  elseif ($this->uri->segment(3) == "reportkasir") {
+		  elseif ($this->uri->segment(3) == "report") {
             $this->load->view('reportkasir');
+            
+          }
+		  elseif ($this->uri->segment(3) == "transaksi") {
+            $this->load->view('transaksi');
             
           }
           else if ($this->uri->segment(2) == "edit_data_member_kasir") {

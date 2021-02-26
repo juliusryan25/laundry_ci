@@ -7,12 +7,9 @@
                      <h2>Print PDF</h2>
                      <div class="input-group">
                         <select class="custom-select" id="table">
-                            <option selected>Choose...</option>
-                            <option value="1">Employe</option>
-                            <option value="2">Member</option>
-                            <option value="3">Package</option>
-                            <option value="4">Outlet</option>
-                            <option value="5">Transaction</option>
+                            <option selected>Choose...</option>                            
+                            <option value="2">Member</option>  
+                            <option value="3">Transaction</option>                            
                         </select>
                         <div class="input-group-append">
                            <button class="btn btn-warning"  onclick="hasil()" type="button"><i class="fas fa-file-download"></i></button>
@@ -30,12 +27,9 @@
                      <h2>Print Excel</h2>
                      <div class="input-group">
                         <select class="custom-select" id="table2">
-                            <option selected>Choose...</option>
-                            <option value="1">Employe</option>
-                            <option value="2">Member</option>
-                            <option value="3">Package</option>
-                            <option value="4">Outlet</option>
-                            <option value="5">Transaction</option>
+                            <option selected>Choose...</option>                            
+                            <option value="2">Member</option>  
+                            <option value="3">Transaction</option>                           
                         </select>
                         <div class="input-group-append">
                            <button class="btn btn-success"  onclick="hasil2()" type="button"><i class="fas fa-file-download"></i></button>
@@ -50,41 +44,23 @@
             <script>
                  function hasil() {
                     var pilihan= document.getElementById("table").value;
-                        
-                    if(pilihan=="1") {
-                        window.location.assign("<?php echo base_url();?>/sistem/cetakDataUser_pdf");
-                    }
-                    else if(pilihan=="2") {
+                                           
+                    if(pilihan=="2") {
                         window.location.assign("<?php echo base_url();?>/sistem/cetakDataMember_pdf");
-                    }
+                    } 
                     else if(pilihan=="3") {
-                        window.location.assign("<?php echo base_url();?>/sistem/cetakDataPackage_pdf");
-                    }
-                    else if(pilihan=="4") {
-                        window.location.assign("<?php echo base_url();?>/sistem/cetakDataOutlet_pdf");
-                    }
-                    else if(pilihan=="5") {
                         window.location.assign("<?php echo base_url();?>/sistem/cetakDataTransaksi_pdf");
-                    };
+                    }                   
                  };
                  function hasil2() {
                     var pilihan= document.getElementById("table2").value;
-                        
-                    if(pilihan=="1") {
-                        window.location.assign("<?php echo base_url();?>/sistem/cetakDataUser_excel");
-                    }
-                    else if(pilihan=="2") {
+                                           
+                    if(pilihan=="2") {
                         window.location.assign("<?php echo base_url();?>/sistem/cetakDataMember_excel");
-                    }
+                    }    
                     else if(pilihan=="3") {
-                        window.location.assign("<?php echo base_url();?>/sistem/cetakDataPackage_excel");
-                    }
-                    else if(pilihan=="4") {
-                        window.location.assign("<?php echo base_url();?>/sistem/cetakDataOutlet_excel");
-                    }
-                    else if(pilihan=="5") {
                         window.location.assign("<?php echo base_url();?>/sistem/cetakDataTransaksi_excel");
-                    };
+                    }                
                  };
             </script>
 </main>
