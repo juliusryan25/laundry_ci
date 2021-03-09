@@ -269,7 +269,7 @@ Class modelsistem extends CI_Model{
         return $data->num_rows();
     }
     public function get_transaksi_harian($id){
-        $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id' AND tgl_order='DATE(NOW())'");
+        $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id' AND tgl_order=DATE(NOW())");
         return $data->num_rows();
     }
     public function get_data_paket1($table,$where){
