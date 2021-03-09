@@ -39,15 +39,15 @@
               <td><?php echo $datas->diskon;?></td>
 
 
-							<td style="width:140px">
+							<td style="width:40px">
 								<div class="col-12">
 									<a href="<?php echo site_url('sistem/edit_paket/'.$datas->id_paket); ?>"><button
-											class=" btn btn-success btn-sm edit_data" style="width: 100%;"><i class="fas fa-edit"></i> Edit
+											class=" btn btn-success btn-sm edit_data" style="width: 100%;"><i class="fas fa-edit"></i>
 										</button></a>
 								</div>
 								<div class="col-12 mt-2">
 									<button data-toggle="modal" data-target="#exampleModal" class=" btn btn-danger btn-sm hapus_data"
-										style="width: 100%;"><i class="fas fa-trash"></i> Delete </button>
+										style="width: 100%;"><i class="fas fa-trash"></i></button>
 								</div>
 							</td>
 						</tr>
