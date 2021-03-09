@@ -75,8 +75,8 @@
 													<center><b>
 															<p class="text-danger" id="pesan"></p>
 														</b></center>
-
 												</div>
+                        
 												<!-- <form action="<?php echo site_url('sistem/simpan_member');?>" method="post" enctype="multipart/form-data" > -->
 												<input type="hidden" name="id_user" value="<?php echo $this->session->userdata('id');?>">
 												<input type="hidden" name="id_outlet" value="<?php echo $this->session->userdata('out');?>">
