@@ -210,7 +210,8 @@ Class modelsistem extends CI_Model{
         'id_outlet' => $this->input->post('idout'),
         'jenis' => $this->input->post('jenis'),
         'nama_paket' => $this->input->post('nama_paket'),
-        'harga' => $this->input->post('harga')
+        'harga' => $this->input->post('harga'),
+        'diskon' => $this->input->post('diskon')
 
     );
 
@@ -245,7 +246,8 @@ Class modelsistem extends CI_Model{
             'id_outlet' => $this->input->post('idout'),
             'jenis' => $this->input->post('jenis'),
             'nama_paket' => $this->input->post('nama_paket'),
-            'harga' => $this->input->post('harga')
+            'harga' => $this->input->post('harga'),
+            'diskon' => $this->input->post('diskon')
     
         );
     
@@ -265,6 +267,14 @@ Class modelsistem extends CI_Model{
     public function count_transaksi(){
         $data = $this->db->get('tb_transaksi');
         return $data->num_rows();
+    }
+    public function get_transaksi_harian($id){
+        $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id' AND tgl_order='DATE(NOW())'");
+        return $data->num_rows();
+    }
+    public function get_data_paket1($table,$where){
+        $data = $this->db->query("SELECT * FROM $table where id_paket='$where'");
+        return $data->result();
     }
     public function get_db_user(){
         $data = $this->db->get("user");

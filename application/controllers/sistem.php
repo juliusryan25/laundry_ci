@@ -37,6 +37,7 @@
                 // header("Location:".base_url().'sistem/indexkasir/home/'.$this->session->userdata('usernama'));
                 echo "<script>alert('Access Denied');history.go(-1);</script>";
             }
+            $id = $this->session->userdata('out');
             $data['title'] = "Starbhak Laundry";
             $data['user'] = $this->modelsistem->get_user();
             $data['c_user'] = $this->modelsistem->count_user();
@@ -52,7 +53,8 @@
             $data['paket'] = $this->modelsistem->get_db_paket();
             $data['member'] = $this->modelsistem->get_db_member();
             $data['usern'] = $this->modelsistem->get_db_user();
-            $data['membern'] = $this->modelsistem->get_db_member();
+            $data['membern'] = $this->modelsistem->get_db_member(); 
+            $data['total_transaksi_harian'] = $this->modelsistem->get_transaksi_harian($id);           
             $this->load->view('index',$data);
         }
        
@@ -410,17 +412,19 @@
         }
 
         function ambildata(){
-           $data_transaksi = $this->modelsistem->get_transaksi();
+            $data_transaksi = $this->modelsistem->get_transaksi();
             echo json_encode($data_transaksi); 
             
             
         }
+
         function get_data_paket(){
-            $id = $this->input->post('id_paket', true);
-			$data = $this->modelsistem->get_id_paket($id)->result();
-			echo json_encode($data);
-             
-         }
+            $id=$this->input->post('id');
+            $where=array('id_paket'=>$id);                     
+            $data_pilih_paket = $this->modelsistem->ambilId('tb_paket',$where)->result();
+            echo json_encode($data_pilih_paket);
+        }
+
          function tambahtransaksi(){
             $id_outlet = $this->input->post('id_outlet');
             $id_member = $this->input->post('id_member');
