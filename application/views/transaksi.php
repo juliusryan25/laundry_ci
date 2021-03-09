@@ -318,7 +318,7 @@
                       '<td>'+ data[i].kembalian + ' </td>'+
                       '<td>'+ data[i].status_bayar + ' </td>'+
                       '<td>'+ data[i].id_user+ ' </td>'+          
-                      '<td><a href="#form" data-toggle="modal" class="btn btn-success col-12" onclick="submit('+data[i].id_transaksi+')"><i class="fas fa-edit"></i></a><a onclick="hapusdata('+data[i].id_transaksi+')" class="btn btn-danger col-12 mt-2"><i class="fas fa-trash"></i> </a></td>'+                                  
+                      '<td><a href="#form" data-toggle="modal" class="btn btn-success col-12" onclick="submit('+data[i].id_transaksi+')"><i class="fas fa-edit"></i></a><a onclick="hapusdata('+data[i].id_transaksi+')" class="btn btn-danger col-12 mt-2"><i class="fas fa-trash"></i> </a><a onclick="print('+data[i].id_transaksi+')" class="btn btn-warning col-12 mt-2"><i class="fas fa-file"></i> </a></td>'+                                  
                     '</tr>';
         }
         $('#targetdata').html(baris);
@@ -584,6 +584,21 @@
           }
         })
       }
+
+///Print///
+function print(id_transaksi) {       
+
+       
+          $.ajax({
+            type:'POST',
+            data:'id='+id_transaksi,
+            url:'<?php echo base_url()."sistem/cetakStruk_pdf"?>',
+            success: function(){}
+            
+            
+          })}    
+    
+
 
  ///HAPUS///
  function hapusdata(id_transaksi) {

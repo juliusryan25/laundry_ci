@@ -1,6 +1,6 @@
 <main role="main" class="container-fluid" style="margin-top: 5%;">
 <center><div class="col-xl-6">
-              <div class="card border-left-warning shadow h-100 py-2">
+              <!-- <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body" style="width:100%">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
@@ -21,7 +21,7 @@
                     </div>             
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <div class="card border-left-success mt-4 shadow h-100 py-2">
                 <div class="card-body" style="width:100%">

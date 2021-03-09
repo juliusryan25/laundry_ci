@@ -146,6 +146,10 @@
             $this->load->view('transaksi');
             
           }
+		  elseif ($this->uri->segment(3) == "transaksi_day") {
+            $this->load->view('transaksi_day');
+			
+		  }
           else if ($this->uri->segment(2) == "edit_data_member") {
             $this->load->view('edit_member');
             

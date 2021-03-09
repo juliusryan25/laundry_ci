@@ -1,4 +1,9 @@
 <main role="main" class="container-fluid">
+  <style>
+    .menu_card:hover{      
+      background:linear-gradient(to right,white,whitesmoke);
+    }
+  </style>
 <title>home</title>
 <div class="row">
           <div class="col-sm-offset-2 col-sm-2 "></div>
@@ -24,7 +29,8 @@
             <div class="col-sm-offset-2 col-sm-2"></div>
           </div>
           <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
+              <div class="card border-left-warning shadow h-100 py-2 menu_card">
+              <a href="<?php echo site_url('sistem/index/data_karyawan'); ?>" style="text-decoration:none;">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
@@ -34,15 +40,16 @@
                     </center>
                     </div>
                     <div class="col-auto">
-                    <i class="fas fa-user fa-2x text-gray-300"></i>
-                  
+                    <i class="fas fa-user fa-2x text-gray-300"></i>                  
                     </div>
                   </div>
                 </div>
+              </a>
               </div>
               </div>
               <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
+              <div class="card border-left-success shadow h-100 py-2 menu_card ">
+              <a href="<?php echo site_url('sistem/index/member1'); ?>" style="text-decoration:none;">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
@@ -58,9 +65,11 @@
                   </div>
                 </div>
               </div>
+            </a>
               </div>
               <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-danger shadow h-100 py-2">
+              <div class="card border-left-danger shadow h-100 py-2 menu_card">
+              <a href="<?php echo site_url('sistem/index/outlet'); ?>" style="text-decoration:none;">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
@@ -75,10 +84,12 @@
                     </div>
                   </div>
                 </div>
+              </a>
               </div>
               </div>
               <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card border-left-primary shadow h-100 py-2 menu_card">
+              <a href="<?php echo site_url('sistem/index/transaksi_day'); ?>" style="text-decoration:none;">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
@@ -93,6 +104,7 @@
                     </div>
                   </div>
                 </div>
+                </a>
               </div>
               </div>
         </div>

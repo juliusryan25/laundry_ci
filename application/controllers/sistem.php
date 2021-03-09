@@ -47,7 +47,7 @@
             $data['c_outlet'] = $this->modelsistem->count_outlet();
             $data['paket'] = $this->modelsistem->get_paket();
             $data['c_paket'] = $this->modelsistem->count_paket();
-            $data['transaksi'] = $this->modelsistem->get_transaksi();
+            $data['transaksi'] = $this->modelsistem->get_transaksi($id);
             $data['c_transaksi'] = $this->modelsistem->count_transaksi();
             $data['outlet'] = $this->modelsistem->get_db_outlet();
             $data['paket'] = $this->modelsistem->get_db_paket();
@@ -412,9 +412,15 @@
         }
 
         function ambildata(){
-            $data_transaksi = $this->modelsistem->get_transaksi();
+            $id = $this->session->userdata('out');
+            $data_transaksi = $this->modelsistem->get_transaksi($id);
             echo json_encode($data_transaksi); 
-            
+                        
+        }
+        function transaksi_day(){
+            $id = $this->session->userdata('out');
+            $data_transaksi_day = $this->modelsistem->get_transaksi_day($id);
+            echo json_encode($data_transaksi_day);             
             
         }
 
@@ -587,6 +593,31 @@
             $data['c_transaksi']= $this->modelsistem->count_transaksi();
             $data['transaksi']= $this->modelsistem->get_transaksi();
             $this->load->view('cetak/pdf_datatransaksi_preview',$data);
+
+            $html = ob_get_contents();
+            ob_end_clean();
+    
+            //folder asset
+            require'./assets/html2pdf/autoload.php';
+    
+            $pdf = new Spipu\Html2Pdf\Html2Pdf('L','A4','en');
+            $pdf->WriteHTML($html);
+
+            //Nama File
+            $pdf->Output('Data_Transaksi_'.date('d-m-Y').'.pdf','D');
+
+        }
+
+        public function cetakStruk_pdf(){
+            ob_start();
+
+            $id=$this->input->post('id');
+            $where=array('id_transaksi'=>$id);
+
+            //butuh view untuk load tablenya
+            $data['c_transaksi']= $this->modelsistem->count_transaksi();
+            $data['transaksi']= $this->modelsistem->get_transaksi_struk($id);
+            $this->load->view('cetak/pdf_struk',$data);
 
             $html = ob_get_contents();
             ob_end_clean();

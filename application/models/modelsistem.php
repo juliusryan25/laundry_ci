@@ -259,8 +259,16 @@ Class modelsistem extends CI_Model{
 
 }
     ////transaksi////
-    public function get_transaksi(){
-        $data = $this->db->get('tb_transaksi');
+    public function get_transaksi($id){
+        $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id'");
+        return $data->result();
+    }
+    public function get_transaksi_day($id){
+        $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id' AND tgl_order=DATE(NOW())");
+        return $data->result();
+    }
+    public function get_transaksi_struk($id){
+        $data = $this->db->query("SELECT * FROM tb_transaksi where id_transaksi='$id'");
         return $data->result();
     }
 
