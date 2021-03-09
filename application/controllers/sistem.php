@@ -643,6 +643,18 @@
             $this->load->view('cetak/excel_datatransaksi_preview',$data);
 
         }
+        public function cetakDataTransaksiDay_excel(){
+            header('Content-Type: application / vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="Data_Transaksi.xls"');
+            //namafilenya//
+            header('Cache-Control: max-age=0');
+            
+            $id = $this->session->userdata('out');
+
+            $data['transaksi']=$this->modelsistem->get_transaksi_day($id);
+            $this->load->view('cetak/excel_datatransaksi_preview',$data);
+
+        }
 
 
     }
