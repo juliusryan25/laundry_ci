@@ -32,13 +32,13 @@
                   <td><?php echo $datas->jenis_kelamin;?></td>
              
                 
-                  <td style="width:140px">
+                  <td style="width:50px"><center>
                   <div class="col-12">
-                    <a href="<?php echo site_url('sistem/edit_data_member/'.$datas->id_member); ?>"><button  class=" btn btn-success btn-sm edit_data" style="width: 100%;" ><i class="fas fa-edit"></i>  Edit </button></a>
+                    <a href="<?php echo site_url('sistem/edit_data_member/'.$datas->id_member); ?>"><button  class=" btn btn-success btn-sm edit_data" style="width: 100%;" ><i class="fas fa-edit"></i></button></a>
                     </div>
                     <div class="col-12 mt-2" >
-                   <button data-toggle="modal" data-target="#exampleModal" class=" btn btn-danger btn-sm hapus_data" style="width: 100%;" ><i class="fas fa-trash"></i>  Delete </button>
-                    </div>
+                   <button data-toggle="modal" data-target="#exampleModal" class=" btn btn-danger btn-sm hapus_data" style="width: 100%;" ><i class="fas fa-trash"></i></button>
+                    </div></center>
                   </td>
                 </tr>
                 <?php }

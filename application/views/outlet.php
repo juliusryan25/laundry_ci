@@ -79,14 +79,14 @@
                   <td><?php echo $datas->nama;?></td>
                   <td><?php echo $datas->alamat;?></td>
                   <td><?php echo $datas->tlp;?></td>      
-                  <td style="width:140px">
+                  <td style="width:40px">
                   <center>
                   <div class="row">
                   <div class="col-12">
-                    <a href="<?php echo site_url('sistem/edit_outlet/'.$datas->id_outlet); ?>"> <button class=" btn btn-success btn-sm edit_data" style="width: 80%;"><i class="fas fa-edit"></i> Edit</button></a>
+                    <a href="<?php echo site_url('sistem/edit_outlet/'.$datas->id_outlet); ?>"> <button class=" btn btn-success btn-sm edit_data" style="width: 50%;"><i class="fas fa-edit"></i></button></a>
                   </div>
                     <div class="col-12 mt-1" >
-                      <button class=" btn btn-danger btn-sm edit_data"  data-toggle="modal" data-target="#hapus" style="width: 80%;"><i class="fas fa-trash"></i> Delete</button>
+                      <button class=" btn btn-danger btn-sm edit_data"  data-toggle="modal" data-target="#hapus" style="width: 50%;"><i class="fas fa-trash"></i></button>
                     </div>
                   </div>
                   </center>

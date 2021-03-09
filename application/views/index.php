@@ -32,16 +32,10 @@
 			<a href="#">Starbhak Laundry</a>
 		</div>
 		<div class="top_menu">
-			<div class="home_link">
-				<a  style="text-decoration:none" href="<?php echo site_url('sistem/index/home'); ?>">
-					<span class="icon"><i class="fas fa-home"></i></span>
-					<span>Home</span>
-				</a>
-			</div>
+			<div class="home_link"></div>
 			<div class="right_info">
 				<div class="">
-					<div class="" style="padding:0px">
-					<img src="<?php echo base_url().'assets/'.$this->session->userdata('gambar'); ?>"  style="width:43px;border-radius:5px;"  alt="...">
+					<div class="" style="padding:0px">					
 					</div>
 				</div>
 				<div class="icon_wrap bg-danger">

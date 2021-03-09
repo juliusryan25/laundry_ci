@@ -56,7 +56,7 @@ Class modelsistem extends CI_Model{
 		}
 
         public function delete_user_db($id){
-            $this->db->delete('tb_user',array('id_user'=> $id));   
+            $this->db->delete('user',array('id_user'=> $id));   
         }
 
         public function get_data_edit_user($id){
@@ -273,8 +273,9 @@ Class modelsistem extends CI_Model{
         return $data->num_rows();
     }
     public function get_data_paket1($table,$where){
-        $data = $this->db->query("SELECT * FROM $table where id_paket='$where'");
-        return $data->result();
+        // $data = $this->db->query("SELECT * FROM $table where id_paket='$where'");
+        // return $data->result();
+        return $this->db->get_where($table,$where);
     }
     public function get_db_user(){
         $data = $this->db->get("user");

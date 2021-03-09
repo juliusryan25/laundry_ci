@@ -230,7 +230,7 @@
 
         public function delete_data($id){
             $this->modelsistem->delete_db($id);
-            header("Location:".base_url().'sistem/index/member');
+            header("Location:".base_url().'sistem/index/member1');
         }
 
         public function edit_data_member($id){
@@ -421,7 +421,7 @@
         function get_data_paket(){
             $id=$this->input->post('id');
             $where=array('id_paket'=>$id);                     
-            $data_pilih_paket = $this->modelsistem->ambilId('tb_paket',$where)->result();
+            $data_pilih_paket = $this->modelsistem->get_data_paket1('tb_paket',$where)->result();
             echo json_encode($data_pilih_paket);
         }
 
