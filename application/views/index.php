@@ -90,12 +90,12 @@
 		              <span class="list">Transaction</span>
 		            </a>
 		          </li>
-				  <li>
+				  <!-- <li>
 		            <a href="<?php echo site_url('sistem/index/report'); ?>">
 		              <span class="icon"><i class="fas fa-file-archive"></i></span>
 		              <span class="list">Report</span>
 		            </a>
-		          </li>
+		          </li> -->
 		        </ul>
 
 		        <div class="hamburger">

@@ -1,10 +1,16 @@
 <main role="main" class="container-fluid" style="margin-top: 0%;">
 
 	<div class="row">
-		&nbsp&nbsp&nbsp&nbsp<h3>Package</h3>
-		<div class="col-md-2">
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add"> <i
-					class="fas fa-box-open"></i>&nbsp +</butttom>
+
+		<div class="col-2">
+			&nbsp&nbsp&nbsp&nbsp<h3>Package</h3>
+		</div>
+		<div class="col-7">
+			<button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#add"> <i class="fas fa-box-open"></i>&nbsp +</butttom>
+		</div>
+		<div class="col-3">
+			<a href="<?php echo site_url('sistem/cetakDataPackage_excel'); ?>" class="btn btn-success col-12 mt-4 w-75"
+				style="float:right"> Generate XLS <i class="fas fa-file"></i> </a>
 		</div>
 
 		<div class="col-sm-12 mt-4">
@@ -17,7 +23,7 @@
 							<td>Jenis</td>
 							<td>Nama_Paket</td>
 							<td>Harga</td>
-              <td>Diskon</td>
+              				<td>Diskon</td>
 							<td>Action</td>
 						</tr>
 					</thead>

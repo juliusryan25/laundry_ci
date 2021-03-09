@@ -639,7 +639,9 @@
             //namafilenya//
             header('Cache-Control: max-age=0');
 
-            $data['transaksi']=$this->modelsistem->get_transaksi();
+            $id = $this->session->userdata('out');
+
+            $data['transaksi']=$this->modelsistem->get_transaksi($id);
             $this->load->view('cetak/excel_datatransaksi_preview',$data);
 
         }
@@ -648,7 +650,7 @@
             header('Content-Disposition: attachment;filename="Data_Transaksi.xls"');
             //namafilenya//
             header('Cache-Control: max-age=0');
-            
+
             $id = $this->session->userdata('out');
 
             $data['transaksi']=$this->modelsistem->get_transaksi_day($id);
