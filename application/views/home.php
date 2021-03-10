@@ -22,7 +22,7 @@
 								<h2 class="card-title"><?php echo $this->session->userdata('usernama'); ?></h2>
 								<p class="card-text">Status : <?php echo $this->session->userdata('stat'); ?></p>
 								<p class="card-text">Outlet : <?php echo $this->session->userdata('out'); ?></p>
-								<p class="card-text"><small class="text-muted">Login Succes</small></p>
+								<p class="card-text"><small class="text-success">Login Succes</small></p>
 							</center>
 						</div>
 					</div>

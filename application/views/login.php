@@ -18,8 +18,7 @@
                       <div class="col-md-8" style="background:linear-gradient(to right,white,white);border-radius:14px">
                         <div class="card-body" style="margin: 14%;">
                           <center>
-                          <h4 class="card-title" style="color: white;">Login</h4>
-
+                          <h4 class="card-title" style=""></h4>
                           <form action="<?php echo site_url('sistem/aksi_login') ?>" method="post" enctype="multipart/form-data">
                           <div class="col-auto">
                             <label class="sr-only" for="inlineFormInputGroup">Username</label>
@@ -39,7 +38,7 @@
                               <input type="password" name="pass" class="form-control is-invalid" id="pass" placeholder="">
                             </div>
                           </div>
-                          <button type="submit" style="width: 93.5%;" class="btn btn-primary mb-2">Next</button>
+                          <button type="submit" style="width: 93.5%;" class="btn btn-light shadow mb-2 mt-3">Next</button>
                          </center>
                          </form>
                         </div>
