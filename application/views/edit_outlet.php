@@ -1,16 +1,16 @@
-<main role="main" class="container-fluid" style="margin-top: 7%;">
+<main role="main" class="container-fluid" style="margin-top: 5%;">
  
 <div class="row">
             <div class="col-12">
-                <div class="card" style="max-width: 100%; margin-top: 1%;margin-bottom: 2%;border-color: dodgerblue;">
+                <div class="card shadow" style="max-width: 100%; margin-top: 1%;margin-bottom: 2%;">
                     <div class="row no-gutters">
                       <div class="col-md-4" style="margin-top: 4.5%;">
                         <img src="<?php echo base_url(); ?>assets/image/lon.png" class="card-img" alt="...">
                       </div>
-                      <div class="col-md-8" style="background:linear-gradient(to right,white,dodgerblue);">
+                      <div class="col-md-8" style="background:linear-gradient(to right,white,white);">
                         <div class="card-body" style="margin: 2%;">
                           <center>
-                          <h4 class="card-title" style="color: white;">Edit Outlet</h4>
+                          <h4 class="card-title" style="color: black;">Edit Outlet</h4>
 
                           <form action="<?php echo site_url('sistem/aksi_edit_outlet');?>" method="post" enctype="multipart/form-data" >
 

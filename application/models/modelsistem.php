@@ -298,6 +298,10 @@ Class modelsistem extends CI_Model{
     $data = $this->db->get('tb_paket');
     return $data->result();
    }
+   public function get_db_paket_outlet($id){
+    $data = $this->db->query("SELECT * FROM tb_paket where id_outlet='$id'");
+    return $data->result();
+   }
    public function get_id_paket($id){
     $data = $this->db->query("SELECT * FROM tb_paket where id_paket='$id'");
     // $query = $this->db->get_where("tb_paket", ['id_paket' => $id]);

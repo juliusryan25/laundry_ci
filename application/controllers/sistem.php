@@ -51,6 +51,7 @@
             $data['c_transaksi'] = $this->modelsistem->count_transaksi();
             $data['outlet'] = $this->modelsistem->get_db_outlet();
             $data['paket'] = $this->modelsistem->get_db_paket();
+            $data['paket_outlet'] = $this->modelsistem->get_db_paket_outlet($id);
             $data['member'] = $this->modelsistem->get_db_member();
             $data['usern'] = $this->modelsistem->get_db_user();
             $data['membern'] = $this->modelsistem->get_db_member(); 

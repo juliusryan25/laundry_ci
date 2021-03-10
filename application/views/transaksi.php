@@ -15,7 +15,7 @@
 		<div class="col-md-12 mt-4">
 			<div class="table-responsive mb-4">
 				<table id="mydata" class="table table-striped table-bordered" style="width:100%">
-					<thead class="bg-primary text-light">
+					<thead>
 						<tr>
 							<td>Id_Transaksi</td>
 							<td>Id_Outlet</td>
@@ -58,17 +58,17 @@
 				<div class="row">
 					<div class="modal-body " style="text-align:center">
 						<div class="col-12">
-							<div class="card" style="max-width: 100%; margin-top: 1%;margin-bottom: 2%;border-color: DodgerBlue;">
+							<div class="card shadow" style="max-width: 100%; margin-top: 1%;margin-bottom: 2%;">
 								<div class="row no-gutters">
 									<div class="col-md-4" style="margin-top: 5%;">
 										<img src="<?php echo base_url(); ?>assets/image/lon.png" class="card-img" alt="...">
 									</div>
-									<div class="col-md-8" style="background:linear-gradient(to right,white,DodgerBlue);">
+									<div class="col-md-8" style="background:linear-gradient(to right,white,white);">
 										<div class="card-body" style="margin: 2%;">
 											<div class="row">
 												<div class="col-sm-12">
 													<center>
-														<h4 class="card-title " style="color: white;">Transaction</h4>
+														<h4 class="card-title " style="color: black;">Transaction</h4>
 												</div>
 
 												<div class="col-12">
@@ -120,7 +120,7 @@
 														</div>
 														<select class="custom-select" name="paket" id="paket">
 															<option value="" selected> Choose </option>
-															<?php foreach($paket as $paket) : ?>
+															<?php foreach($paket_outlet as $paket) : ?>
 
 															<option value="<?= $paket->id_paket; ?>"><?= $paket->nama_paket; ?></option>
 
@@ -130,7 +130,7 @@
 													</div>
 												</div>
 
-												<div class="col-sm-12">
+												<div class="col-sm-6">
 													<label class="sr-only" for="inlineFormInputGroup">Harga</label>
 													<div class="input-group mb-2">
 														<div class="input-group-prepend">
@@ -140,7 +140,7 @@
 													</div>
 												</div>
 
-												<div class="col-sm-12">
+												<div class="col-sm-6">
 													<label class="sr-only" for="inlineFormInputGroup">Diskon</label>
 													<div class="input-group mb-2">
 														<div class="input-group-prepend">
@@ -148,19 +148,9 @@
 														</div>
 														<input type="text" readonly class="form-control" id="diskon" name="diskon" placeholder="">
 													</div>
-												</div>
+												</div>												
 
-												<div class="col-sm-12">
-													<label class="sr-only" for="inlineFormInputGroup">Pajak</label>
-													<div class="input-group mb-2">
-														<div class="input-group-prepend">
-															<div class="input-group-text" style="width: 97px; text-align: center;">Pajak</div>
-														</div>
-														<input type="int" readonly class="form-control" id="pajak" name="pajak" placeholder="">
-													</div>
-												</div>
-
-												<div class="col-sm-12">
+												<div class="col-sm-6">
 													<label class="sr-only" for="inlineFormInputGroup">Total</label>
 													<div class="input-group mb-2">
 														<div class="input-group-prepend">
@@ -168,6 +158,16 @@
 														</div>
 														<input type="text" readonly class="form-control" id="total_harga" name="total_bayar"
 															placeholder="">
+													</div>
+												</div>
+
+												<div class="col-sm-6">
+													<label class="sr-only" for="inlineFormInputGroup">Pajak</label>
+													<div class="input-group mb-2">
+														<div class="input-group-prepend">
+															<div class="input-group-text" style="width: 97px; text-align: center;">Pajak</div>
+														</div>
+														<input type="int" readonly class="form-control" id="pajak" name="pajak" placeholder="">
 													</div>
 												</div>
 
@@ -193,7 +193,23 @@
 													</div>
 												</div>
 
-												<div class="col-sm-12">
+												<div class="col-sm-6">
+													<label class="sr-only" for="inlineFormInputGroup">Status</label>
+													<div class="input-group mb-2">
+														<div class="input-group-prepend">
+															<label class="input-group-text bg-primary text-light"
+																style="width: 115px; text-align: center;" for="inputGroupSelect01">Status Bayar</label>
+														</div>
+														<select class="custom-select" name="status_bayar" id="inputGroupSelect01">
+															<option value="" selected>Choose...</option>
+															<option value="dibayar">Dibayar</option>
+															<option value="belum_dibayar">Belum_dibayar</option>
+															<option value="kurang">Kurang</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="col-sm-6">
 													<label class="sr-only" for="inlineFormInputGroup">tgl</label>
 													<div class="input-group mb-2">
 														<div class="input-group-prepend">
@@ -203,21 +219,9 @@
 														<input type="date" class="form-control" id="tanggal_order" name="tanggal_order"
 															placeholder="" value="<?php echo date('Y-m-d') ?>">
 													</div>
-												</div>
+												</div>																								
 
-												<div class="col-sm-12">
-													<label class="sr-only" for="inlineFormInputGroup">tglbayar</label>
-													<div class="input-group mb-2">
-														<div class="input-group-prepend">
-															<div class="input-group-text  bg-primary text-light"
-																style="width: 97px; text-align: center;">Tgl Bayar</div>
-														</div>
-														<input type="date" class="form-control" id="tanggal_bayar" name="tanggal_bayar"
-															placeholder="">
-													</div>
-												</div>
-
-												<div class="col-sm-12">
+												<div class="col-sm-6">
 													<label class="sr-only" for="inlineFormInputGroup">Status</label>
 													<div class="input-group mb-2">
 														<div class="input-group-prepend">
@@ -235,24 +239,17 @@
 													</div>
 												</div>
 
-												<div class="col-sm-12">
-													<label class="sr-only" for="inlineFormInputGroup">Status</label>
+												<div class="col-sm-6">
+													<label class="sr-only" for="inlineFormInputGroup">tglbayar</label>
 													<div class="input-group mb-2">
 														<div class="input-group-prepend">
-															<label class="input-group-text bg-primary text-light"
-																style="width: 115px; text-align: center;" for="inputGroupSelect01">Status Bayar</label>
+															<div class="input-group-text  bg-primary text-light"
+																style="width: 97px; text-align: center;">Tgl Bayar</div>
 														</div>
-														<select class="custom-select" name="status_bayar" id="inputGroupSelect01">
-															<option value="" selected>Choose...</option>
-															<option value="dibayar">Dibayar</option>
-															<option value="belum_dibayar">Belum_dibayar</option>
-															<option value="kurang">Kurang</option>
-
-
-														</select>
+														<input type="date" class="form-control" id="tanggal_bayar" name="tanggal_bayar"
+															placeholder="">
 													</div>
-												</div>
-
+												</div>												
 
 											</div>
 
@@ -348,12 +345,12 @@
 								'<td>' + data[i].kembalian + ' </td>' +
 								'<td>' + data[i].status_bayar + ' </td>' +
 								'<td>' + data[i].id_user + ' </td>' +
-								'<td><a href="#form" data-toggle="modal" class="btn btn-success col-12" onclick="submit(' +
+								'<td><a href="#form" data-toggle="modal" class="btn btn-success w-75 col-12" onclick="submit(' +
 								data[i].id_transaksi + ')"><i class="fas fa-edit"></i></a><a onclick="hapusdata(' + data[i]
 								.id_transaksi +
-								')" class="btn btn-danger col-12 mt-2"><i class="fas fa-trash"></i> </a><a onclick="print(' +
+								')" class="btn btn-danger w-75  col-12 mt-2"><i class="fas fa-trash"></i> </a><a onclick="print(' +
 								data[i].id_transaksi +
-								')" class="btn btn-warning col-12 mt-2"><i class="fas fa-file"></i> </a></td>' +
+								')" class="btn btn-warning w-75  col-12 mt-2"><i class="fas fa-file"></i> </a></td>' +
 								'</tr>';
 						}
 						$('#targetdata').html(baris);
