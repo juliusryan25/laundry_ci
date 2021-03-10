@@ -280,10 +280,11 @@ Class modelsistem extends CI_Model{
         $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id' AND tgl_order=DATE(NOW())");
         return $data->num_rows();
     }
-    public function get_data_paket1($table,$where){
+    public function get_data_paket1($id){
         // $data = $this->db->query("SELECT * FROM $table where id_paket='$where'");
         // return $data->result();
-        return $this->db->get_where($table,$where);
+        $query = $this->db->get_where('tb_paket',['id_paket' =>  $id]);
+        return $query;
     }
     public function get_db_user(){
         $data = $this->db->get("user");

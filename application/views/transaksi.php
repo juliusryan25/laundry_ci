@@ -201,7 +201,7 @@
 																style="width: 97px; text-align: center;">Tgl Order</div>
 														</div>
 														<input type="date" class="form-control" id="tanggal_order" name="tanggal_order"
-															placeholder="">
+															placeholder="" value="<?php echo date('Y-m-d') ?>">
 													</div>
 												</div>
 
@@ -442,10 +442,11 @@
 												'<td>' + data[i].status_bayar + ' </td>' +
 												'<td>' + data[i].id_user + ' </td>' +
 												'<td><a href="#form" data-toggle="modal" class="btn btn-success col-12" onclick="submit(' +
-												data[i].id_transaksi +
-												')"><i class="fas fa-edit"></i></a><a onclick="hapusdata(' + data[i]
+												data[i].id_transaksi + ')"><i class="fas fa-edit"></i></a><a onclick="hapusdata(' + data[i]
 												.id_transaksi +
-												')" class="btn btn-danger col-12 mt-2"><i class="fas fa-trash"></i> </a></td>' +
+												')" class="btn btn-danger col-12 mt-2"><i class="fas fa-trash"></i> </a><a onclick="print(' +
+												data[i].id_transaksi +
+												')" class="btn btn-warning col-12 mt-2"><i class="fas fa-file"></i> </a></td>' +
 												'</tr>';
 										}
 										$('#targetdata').html(baris);
@@ -595,10 +596,11 @@
 												'<td>' + data[i].status_bayar + ' </td>' +
 												'<td>' + data[i].id_user + ' </td>' +
 												'<td><a href="#form" data-toggle="modal" class="btn btn-success col-12" onclick="submit(' +
-												data[i].id_transaksi +
-												')"><i class="fas fa-edit"></i></a><a onclick="hapusdata(' + data[i]
+												data[i].id_transaksi + ')"><i class="fas fa-edit"></i></a><a onclick="hapusdata(' + data[i]
 												.id_transaksi +
-												')" class="btn btn-danger col-12 mt-2"><i class="fas fa-trash"></i> </a></td>' +
+												')" class="btn btn-danger col-12 mt-2"><i class="fas fa-trash"></i> </a><a onclick="print(' +
+												data[i].id_transaksi +
+												')" class="btn btn-warning col-12 mt-2"><i class="fas fa-file"></i> </a></td>' +
 												'</tr>';
 										}
 										$('#targetdata').html(baris);
@@ -688,10 +690,11 @@
 												'<td>' + data[i].status_bayar + ' </td>' +
 												'<td>' + data[i].id_user + ' </td>' +
 												'<td><a href="#form" data-toggle="modal" class="btn btn-success col-12" onclick="submit(' +
-												data[i].id_transaksi +
-												')"><i class="fas fa-edit"></i></a><a onclick="hapusdata(' + data[i]
+												data[i].id_transaksi + ')"><i class="fas fa-edit"></i></a><a onclick="hapusdata(' + data[i]
 												.id_transaksi +
-												')" class="btn btn-danger col-12 mt-2"><i class="fas fa-trash"></i> </a></td>' +
+												')" class="btn btn-danger col-12 mt-2"><i class="fas fa-trash"></i> </a><a onclick="print(' +
+												data[i].id_transaksi +
+												')" class="btn btn-warning col-12 mt-2"><i class="fas fa-file"></i> </a></td>' +
 												'</tr>';
 										}
 										$('#targetdata').html(baris);

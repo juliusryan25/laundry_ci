@@ -425,9 +425,9 @@
         }
 
         function get_data_paket(){
-            $id=$this->input->post('id');
-            $where=array('id_paket'=>$id);                     
-            $data_pilih_paket = $this->modelsistem->get_data_paket1('tb_paket',$where)->result();
+            $id=$this->input->post('id_paket',true);
+            // $where=array('id_paket'=>$id);                     
+            $data_pilih_paket = $this->modelsistem->get_data_paket1($id)->result();
             echo json_encode($data_pilih_paket);
         }
 
