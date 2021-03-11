@@ -17,7 +17,7 @@ class owner extends CI_Controller {
         }
 
         $judul['title'] = "indexowner";
-       
+        $id = $this->session->userdata('out');
         $data['title'] = "Starbhak Laundry";
         $data['user'] = $this->modelsistem->get_user();
         $data['c_user'] = $this->modelsistem->count_user();
@@ -27,6 +27,8 @@ class owner extends CI_Controller {
         $data['c_outlet'] = $this->modelsistem->count_outlet();
         $data['paket'] = $this->modelsistem->get_paket();
         $data['c_paket'] = $this->modelsistem->count_paket(); 
+        $data['c_transaksi_outlet'] = $this->modelsistem->count_transaksi_outlet($id);
+        $data['total_transaksi_harian'] = $this->modelsistem->get_transaksi_harian($id); 
         $this->load->view('indexowner',$data);
     }
     public function homeowner(){

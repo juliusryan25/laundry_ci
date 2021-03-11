@@ -424,6 +424,12 @@
             echo json_encode($data_transaksi_day);             
             
         }
+        function transaksi_outlet(){
+            $id = $this->session->userdata('out');
+            $data_transaksi_outlet = $this->modelsistem->get_transaksi_outlet($id);
+            echo json_encode($data_transaksi_outlet);             
+            
+        }
 
         function get_data_paket(){
             $id=$this->input->post('id_paket',true);
@@ -665,6 +671,18 @@
             $id = $this->session->userdata('out');
 
             $data['transaksi']=$this->modelsistem->get_transaksi_day($id);
+            $this->load->view('cetak/excel_datatransaksi_preview',$data);
+
+        }
+        public function cetakDataTransaksiOutlet_excel(){
+            header('Content-Type: application / vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="Data_Transaksi.xls"');
+            //namafilenya//
+            header('Cache-Control: max-age=0');
+
+            $id = $this->session->userdata('out');
+
+            $data['transaksi']=$this->modelsistem->get_transaksi_outlet($id);
             $this->load->view('cetak/excel_datatransaksi_preview',$data);
 
         }

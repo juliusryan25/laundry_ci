@@ -34,9 +34,9 @@
 
 <body>
 
-	<div class="wrapper">
+	<!-- <div class="wrapper"> -->
 
-		<div class="top_navbar fixed-top">
+		<!-- <div class="top_navbar fixed-top">
 			<div class="logo">
 				<a href="#">Starbhak Laundry</a>
 			</div>
@@ -62,11 +62,11 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
-		<div class="main_body">
+		<!-- <div class="main_body"> -->
 
-			<div class="sidebar_menu">
+			<!-- <div class="sidebar_menu">
 				<div class="inner__sidebar_menu">
 
 					<ul>
@@ -95,15 +95,32 @@
 					</div>
 
 				</div>
-			</div>
-
-			<div class="container">
+			</div> -->	
+	<!-- </div>
+	</div>
+	</div> -->
+	<div class="container">
 				<div class="row">
 					<div class="col-12">
 						<?php
 					if ($this->uri->segment(3) == "homeowner") {
 						$this->load->view('homeowner');
-						}
+					}
+					else if($this->uri->segment(3) == "transaksi_day") {
+						$this->load->view('transaksi_day');
+					}
+					else if ($this->uri->segment(3) == "outlet_owner") {
+						$this->load->view('outlet_owner');
+						
+					}
+					else if ($this->uri->segment(3) == "member_owner") {
+						$this->load->view('member_owner');
+						
+					}
+					else if ($this->uri->segment(3) == "transaksi_outlet") {
+						$this->load->view('transaksi_outlet');
+						
+					}
 					?>
 						<!-- <div class="item_wrap" >
 	    		<div class="item"> -->
@@ -119,9 +136,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	</div>
-	</div>
 	</div>
 
 

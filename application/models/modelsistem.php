@@ -267,6 +267,10 @@ Class modelsistem extends CI_Model{
         $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id' AND tgl_order=DATE(NOW())");
         return $data->result();
     }
+    public function get_transaksi_outlet($id){
+        $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id'");
+        return $data->result();
+    }
     public function get_transaksi_struk($id){
         $data = $this->db->query("SELECT * FROM tb_transaksi where id_transaksi='$id'");
         return $data->result();
@@ -274,6 +278,11 @@ Class modelsistem extends CI_Model{
 
     public function count_transaksi(){
         $data = $this->db->get('tb_transaksi');
+        return $data->num_rows();
+    }
+
+    public function count_transaksi_outlet($id){
+        $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id'");
         return $data->num_rows();
     }
     public function get_transaksi_harian($id){
