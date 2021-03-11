@@ -12,33 +12,33 @@
             <div class="col-12">
                 <div class="card shadow" style="max-width: 100%; margin-top: 7%;margin-bottom: 7%;border-color: white;border-radius:15px">
                     <div class="row no-gutters">
-                      <div class="col-md-4" style="margin-top: 7%;">
+                      <div class="col-md-4" style="margin-top: 5%;">
                       <img src="<?php echo base_url(); ?>assets/image/lon.png" class="card-img ml-4" alt="...">
                       </div>
                       <div class="col-md-8" style="background:linear-gradient(to right,white,white);border-radius:14px">
                         <div class="card-body" style="margin: 14%;">
                           <center>
-                          <h4 class="card-title" style=""></h4>
+                          <h4 class="card-title"></h4>
                           <form action="<?php echo site_url('sistem/aksi_login') ?>" method="post" enctype="multipart/form-data">
-                          <div class="col-auto">
+                          <div class="col-auto" >
                             <label class="sr-only" for="inlineFormInputGroup">Username</label>
                             <div class="input-group mb-2">
                               <div class="input-group-prepend">
-                                <div class="input-group-text">Username</div>
+                                <div class="input-group-text bg-light" style="border-radius:20px 0px 0px 20px">Username</div>
                               </div>
-                              <input type="text" name="user" class="form-control is-invalid" id="user" placeholder="">
+                              <input type="text" name="user" class="form-control is-invalid" style="border-radius:0px 20px 20px 0px" id="user" placeholder="">
                             </div>
                           </div>
                           <div class="col-auto">
                             <label class="sr-only" for="inlineFormInputGroup">Password</label>
                             <div class="input-group mb-2">
                               <div class="input-group-prepend">
-                                <div class="input-group-text" style="width: 97px; text-align: center;">Password</div>
+                                <div class="input-group-text bg-light" style="width: 97px; text-align: center;border-radius:20px 0px 0px 20px">Password</div>
                               </div>
-                              <input type="password" name="pass" class="form-control is-invalid" id="pass" placeholder="">
+                              <input type="password" name="pass" class="form-control is-invalid" style="border-radius:0px 20px 20px 0px" id="pass" placeholder="">
                             </div>
                           </div>
-                          <button type="submit" style="width: 93.5%;" class="btn btn-light shadow mb-2 mt-3">Next</button>
+                          <button type="submit" style="width: 93.5%;border-radius:20px" class="btn btn-light shadow mb-2 mt-3">Next</button>
                          </center>
                          </form>
                         </div>

@@ -15,14 +15,14 @@
               <thead class="bg-primary text-light">
                 <tr>
                   <td>Id_Transaksi</td>
-                  <td>Id_Outlet</td>
-                  <!-- <td>Kode_Invoice</td> -->
+                  <td>Id_Outlet</td>                 
                   <td>Id_member</td>
                   <td>keterangan</td>
                   <td>id_paket</td>
                   <td>Tgl_masuk</td>                 
                   <td>Tgl_bayar</td>
-                  <!-- <td>Biaya_tambahan</td> -->
+                  <td>Qty</td>
+                  <td>Harga</td>
                   <td>Diskon</td>
                   <td>Pajak</td>
                   <td>Status</td>
@@ -30,8 +30,7 @@
                   <td>Uang_bayar</td>
                   <td>Kembalian</td>
                   <td>Status_Pembayaran</td>
-                  <td>Id_user</td>
-                  <td>Action</td>
+                  <td>Id_user</td>               
                 </tr>
               </thead>
               <tbody id='targetdata' >
@@ -74,10 +73,11 @@
                       '<td>'+ data[i].id_transaksi + '</td>'+
                       '<td>'+ data[i].id_outlet + ' </td>'+                      
                       '<td>'+ data[i].id_member + ' </td>'+
-                      '<td>'+ data[i].keterangan + ' </td>'+
+                      '<td>'+ data[i].keterangan + ' </td>'+                      
                       '<td>'+ data[i].nama_paket + ' </td>'+
                       '<td>'+ data[i].tgl_order + ' </td>'+
-                      '<td>'+ data[i].tgl_bayar + ' </td>'+  
+                      '<td>'+ data[i].tgl_bayar + ' </td>'+
+                      '<td>'+ data[i].qty + ' </td>'+  
                       '<td>'+ data[i].harga + ' </td>'+                                    
                       '<td>'+ data[i].diskon + ' </td>'+
                       '<td>'+ data[i].pajak + ' </td>'+

@@ -436,6 +436,7 @@
             $id_outlet = $this->input->post('id_outlet');
             $id_member = $this->input->post('id_member');
             $keterangan = $this->input->post('keterangan');
+            $qty = $this->input->post('qty');
             $nama_paket = $this->input->post('nama_paket');
             $tgl_order = $this->input->post('tgl_order');
             $tgl_bayar = $this->input->post('tgl_bayar');
@@ -454,6 +455,9 @@
             }
             elseif ($keterangan=='') {
                 $result['pesan']="keterangan harus disi";
+            }
+            elseif ($qty=='') {
+                $result['pesan']="paket harus disi";
             }
             elseif ($nama_paket=='') {
                 $result['pesan']="paket harus disi";
@@ -480,6 +484,7 @@
                     'id_outlet'=>$id_outlet,
                     'id_member'=>$id_member,
                     'keterangan'=>$keterangan,
+                    'qty'=>$qty,
                     'nama_paket'=>$nama_paket,
                     'tgl_order'=>$tgl_order,
                     'tgl_bayar'=>$tgl_bayar,
@@ -521,6 +526,7 @@
             $id_outlet = $this->input->post('id_outlet');
             $id_member = $this->input->post('id_member');
             $keterangan = $this->input->post('keterangan');
+            $qty = $this->input->post('qty');
             $nama_paket = $this->input->post('nama_paket');
             $tgl_order = $this->input->post('tgl_order');
             $tgl_bayar = $this->input->post('tgl_bayar');
@@ -539,6 +545,9 @@
             }
             elseif ($keterangan=='') {
                 $result['pesan']="keterangan harus disi";
+            }
+            elseif ($qty=='') {
+                $result['pesan']="paket harus disi";
             }
             elseif ($nama_paket=='') {
                 $result['pesan']="paket harus disi";
@@ -565,6 +574,7 @@
                     'id_outlet'=>$id_outlet,
                     'id_member'=>$id_member,
                     'keterangan'=>$keterangan,
+                    'qty'=>$qty,
                     'nama_paket'=>$nama_paket,
                     'tgl_order'=>$tgl_order,
                     'tgl_bayar'=>$tgl_bayar,
@@ -626,7 +636,7 @@
             //folder asset
             require'./assets/html2pdf/autoload.php';
     
-            $pdf = new Spipu\Html2Pdf\Html2Pdf('L','A4','en');
+            $pdf = new Spipu\Html2Pdf\Html2Pdf('P','A4','en');
             $pdf->WriteHTML($html);
 
             //Nama File

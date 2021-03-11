@@ -9,22 +9,23 @@
             <table id="example" border="1px" cellspacing="0" class="table table-striped table-bordered" style="width: 100%">
                     <thead>
                     <tr style="text-align: center">
-                                <td>id_transaksi</td>
-                                <td>id_outlet</td>
-                                <td>id_member</td>
+                                <td>Id_Transaksi</td>
+                                <td>Id_Outlet</td>                 
+                                <td>Id_member</td>
                                 <td>keterangan</td>
-                                <td>nama_paket</td>
-                                <td>tgl_order</td>
-                                <td>tgl_bayar</td>
-                                <td>harga</td>
-                                <td>diskon</td>
-                                <td>pajak</td>
-                                <td>status</td>
-                                <td>total</td>
-                                <td>uang_bayar</td>
-                                <td>kembalian</td>
-                                <td>status_bayar</td>
-                                <td>id_user</td>                                
+                                <td>id_paket</td>
+                                <td>Tgl_masuk</td>                 
+                                <td>Tgl_bayar</td>
+                                <td>Qty</td>
+                                <td>Harga</td>
+                                <td>Diskon</td>
+                                <td>Pajak</td>
+                                <td>Status</td>
+                                <td>Total</td>
+                                <td>Uang_bayar</td>
+                                <td>Kembalian</td>
+                                <td>Status_Pembayaran</td>
+                                <td>Id_user</td>                                   
                             </tr>
                     </thead>
 
@@ -41,6 +42,7 @@
                                 <td><?php echo $datas->nama_paket;?></td>
                                 <td><?php echo $datas->tgl_order;?></td>
                                 <td><?php echo $datas->tgl_bayar;?></td>
+                                <td><?php echo $datas->qty;?></td>
                                 <td><?php echo $datas->harga;?></td>
                                 <td><?php echo $datas->diskon;?></td>
                                 <td><?php echo $datas->pajak;?></td>
