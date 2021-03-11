@@ -1,10 +1,12 @@
 <main role="main" class="container-fluid" style="margin-top: 0%;">
 	<div class="row">
 
-		<div class="col-2">
+		<div class="col-1">
+			<a href="<?php echo site_url('owner/indexowner/homeowner'); ?>" class="btn btn-light shadow col-12 mt-4 w-75"><i class="fas fa-chevron-left"></i> </a>
+		</div>
+		<div class="col-8">
 			&nbsp&nbsp&nbsp&nbsp<h3>Outlet</h3>
 		</div>
-		<div class="col-7"></div>
 		<div class="col-3">
 			<a href="<?php echo site_url('sistem/cetakDataOutlet_excel'); ?>" class="btn btn-success col-12 mt-4 w-75"
 				style="float:right"> Generate XLS <i class="fas fa-file"></i> </a>

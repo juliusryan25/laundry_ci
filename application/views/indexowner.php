@@ -106,8 +106,8 @@
 					if ($this->uri->segment(3) == "homeowner") {
 						$this->load->view('homeowner');
 					}
-					else if($this->uri->segment(3) == "transaksi_day") {
-						$this->load->view('transaksi_day');
+					else if($this->uri->segment(3) == "transaksi_day_owner") {
+						$this->load->view('transaksi_day_owner');
 					}
 					else if ($this->uri->segment(3) == "outlet_owner") {
 						$this->load->view('outlet_owner');

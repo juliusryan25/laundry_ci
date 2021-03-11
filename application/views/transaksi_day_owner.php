@@ -1,13 +1,13 @@
 <main role="main" class="container-fluid">
 	<div class="row">
-		<div class="col-1">
+         <div class="col-1">
 			<a href="<?php echo site_url('owner/indexowner/homeowner'); ?>" class="btn btn-light shadow col-12 mt-4 w-75"><i class="fas fa-chevron-left"></i> </a>
 		</div>
 		<div class="col-9">
-			&nbsp&nbsp&nbsp&nbsp<h3>Transaksi / All</h3>
+			&nbsp&nbsp&nbsp&nbsp<h3>Transaksi / Day</h3>
 		</div>
 		<div class="col-2">
-			<a href="<?php echo site_url('sistem/cetakDataTransaksiOutlet_excel'); ?>" class="btn btn-success col-12 mt-4">
+			<a href="<?php echo site_url('sistem/cetakDataTransaksiDay_excel'); ?>" class="btn btn-success col-12 mt-4">
 				Generate XLS <i class="fas fa-file"></i> </a>
 		</div>
     
@@ -69,7 +69,7 @@
 				$.ajax({
 					type: 'GET',
 					async: false,
-					url: '<?php echo base_url()."index.php/sistem/transaksi_outlet"?>',
+					url: '<?php echo base_url()."index.php/sistem/transaksi_day"?>',
 					dataType: 'json',
 					success: function (data) {
 						var baris = '';
