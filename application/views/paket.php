@@ -14,6 +14,7 @@
 		</div>
 
 		<div class="col-sm-12 mt-4">
+		  <div class="card p-md-3 shadow">	
 			<div class="table-responsive mb-4">
 				<table id="example" class="table table-striped table-bordered" style="width:100%">
 					<thead>
@@ -69,6 +70,7 @@
                 }
                   ?>
 					</tbody>
+			</div>
 			</div>
 		</div>
 	</div>

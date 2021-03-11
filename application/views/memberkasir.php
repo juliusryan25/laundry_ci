@@ -7,6 +7,7 @@
 
            
           <div class="col-md-12 mt-4">
+          <div class="card p-md-3 shadow">
             <div class="table-responsive mb-4">
               <table id="example" class="table table-striped table-bordered" style="width:100%">
               <thead>
@@ -15,8 +16,7 @@
                   <td>Nama</td>
                   <td>Alamat</td>
                   <td>No.Telepon</td>
-                  <td>Gender</td>
-                 
+                  <td>Gender</td>                 
                 </tr>
               </thead>
               <tbody>
@@ -29,10 +29,7 @@
                   <td><?php echo $datas->nama;?></td>
                   <td><?php echo $datas->alamat;?></td>
                   <td><?php echo $datas->tlp;?></td>
-                  <td><?php echo $datas->jenis_kelamin;?></td>
-             
-                
-                 
+                  <td><?php echo $datas->jenis_kelamin;?></td>                                              
                 </tr>
                 <?php }
                 } else {
@@ -44,6 +41,7 @@
                 }
                   ?>
               </tbody>
+          </div>
           </div>
         </div>
         </div>
@@ -61,17 +59,17 @@
                     <div class="row">
                     <div class="modal-body " style="text-align:center">
                     <div class="col-12">
-                <div class="card" style="max-width: 100%; margin-top: 1%;margin-bottom: 2%;border-color: DodgerBlue;">
+                <div class="card shadow" style="max-width: 100%; margin-top: 1%;margin-bottom: 2%;">
                     <div class="row no-gutters">
                       <div class="col-md-4" style="margin-top: 5%;">
                         <img src="<?php echo base_url(); ?>assets/image/lon.png" class="card-img" alt="...">
                       </div>
-                      <div class="col-md-8" style="background:linear-gradient(to right,white,DodgerBlue);">
+                      <div class="col-md-8" style="background:linear-gradient(to right,white,white);">
                         <div class="card-body" style="margin: 2%;">
                         <div class="row">
                         <div class="col-sm-12">
                           <center>
-                          <h4 class="card-title " style="color: white;">Member</h4></div>
+                          <h4 class="card-title " style="color: black;">Member</h4></div>
                           <form action="<?php echo site_url('sistem/simpan_member');?>" method="post" enctype="multipart/form-data" >
                         
                           <div class="col-sm-12">

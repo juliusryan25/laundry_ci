@@ -32,18 +32,8 @@
 			<a href="#">Starbhak Laundry</a>
 		</div>
 		<div class="top_menu">
-			<div class="home_link">
-				<a  style="text-decoration:none" href="<?php echo site_url('kasir/indexkasir/homekasir'); ?>">
-					<span class="icon"><i class="fas fa-home"></i></span>
-					<span>Home</span>
-				</a>
-			</div>
-			<div class="right_info">
-				<div class="">
-					<div class="" style="padding:0px">
-					<img src="<?php echo base_url().'assets/'.$this->session->userdata('gambar'); ?>"  style="width:43px;border-radius:5px;"  alt="...">
-					</div>
-				</div>
+			<div class="home_link"></div>
+			<div class="right_info">				
 				<div class="icon_wrap bg-danger">
 					<div class="icon">
 					<a href="<?php echo site_url('sistem/logout'); ?>" style="text-decoration: none;color:white"><i class="fas fa-sign-out-alt"></i></a>
@@ -78,12 +68,12 @@
 		              <span class="list">Transaction</span>
 		            </a>
 		          </li>
-		          <li>
+		          <!-- <li>
 		            <a href="<?php echo site_url('kasir/indexkasir/report'); ?>">
 		              <span class="icon"><i class="fas fa-file-archive"></i></span>
 		              <span class="list">Report</span>
 		            </a>
-		          </li>
+		          </li> -->
 		        </ul>
 
 		        <div class="hamburger">
@@ -123,6 +113,10 @@
           }
 		  elseif ($this->uri->segment(3) == "transaksi") {
             $this->load->view('transaksi');
+            
+          }
+		  elseif ($this->uri->segment(3) == "transaksi_day") {
+            $this->load->view('transaksi_day');
             
           }
           else if ($this->uri->segment(2) == "edit_data_member_kasir") {
