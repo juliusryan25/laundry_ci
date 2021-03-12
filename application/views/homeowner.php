@@ -153,8 +153,8 @@
 			</div>
 		</div>
 		<div class="col-xl-6 col-md-6 mb-4">
-			<div class="card border-left-primary shadow h-100 py-2 ">
-				<div class="col-12 mr-2">
+			<div class="card shadow h-100 py-2 ">
+				<div class="col-12 shadow-sm mr-2">
 					<div class="row mb-2">
 						<div class="col-10">
 							<h3>Employee</h3>
@@ -170,7 +170,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="card-body" style="height:400px;overflow: auto">
+				<div class="card-body" style="max-height:400px;overflow: auto">
 					<div class="row no-gutters align-items-center">
 
 				<?php
@@ -178,11 +178,11 @@
                 	foreach ($user_online as $datas){
               	?>
 
-						<div class="col-12 mr-2 card mt-3 p-md-2 border-0 shadow">
+						<div class="col-12 mr-2 card mt-3 p-md-2 border-0 shadow-sm">
 							<div class="row">
 								<div class='col-3'>
 									<img src="<?php echo base_url().'assets/'.$datas->image; ?>"
-										class="shadow gambar_employee" alt="...">
+										class="shadow-sm gambar_employee" alt="...">
 								</div>
 								<div class='col-5 pt-0'>
 									<b style="font-size:30px"><?php echo $datas->username;?></b>
@@ -208,11 +208,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xl-6 col-md-6 mb-4">
+		<div class="col-xl-6 col-md-6 mb-4" >
 			<div class="card shadow h-100 py-2">
 				<div class="col-12 mr-2">
 						<div class="row mb-2">
-							<div class="col-12">
+							<div class="col-12 shadow-sm" style="height:49px">
 								<h3>Diagram</h3>
 							</div>						
 						</div>
