@@ -12,6 +12,28 @@
 			margin-left: 10%;
 		}
 
+		/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4E73DF; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
 	</style>
 	<title>home</title>
 	<div class="row">
@@ -131,7 +153,7 @@
 			</div>
 		</div>
 		<div class="col-xl-6 col-md-6 mb-4">
-			<div class="card border-left-primary shadow h-100 py-2  menu_card ">
+			<div class="card border-left-primary shadow h-100 py-2 ">
 				<div class="col-12 mr-2">
 					<div class="row mb-2">
 						<div class="col-10">
