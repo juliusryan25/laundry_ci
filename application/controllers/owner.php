@@ -20,6 +20,7 @@ class owner extends CI_Controller {
         $id = $this->session->userdata('out');
         $data['title'] = "Starbhak Laundry";
         $data['user'] = $this->modelsistem->get_user();
+        $data['user_online'] = $this->modelsistem->get_user_online($id);
         $data['c_user'] = $this->modelsistem->count_user();
         $data['member'] = $this->modelsistem->get_member();
         $data['c_member'] = $this->modelsistem->count_member();

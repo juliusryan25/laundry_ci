@@ -45,6 +45,10 @@ Class modelsistem extends CI_Model{
             $data = $this->db->get('user');
             return $data->result();
         }
+        public function get_user_online($id){
+            $data = $this->db->query("SELECT * FROM `user` WHERE id_outlet='$id' ORDER BY `user`.`status_login` DESC ");
+            return $data->result();
+        }
 
         public function count_user(){
             $data = $this->db->get('user');

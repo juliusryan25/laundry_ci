@@ -38,11 +38,13 @@
 					<div class="" style="padding:0px">					
 					</div>
 				</div>
+				<a href="<?php echo site_url('sistem/logout'); ?>" style="text-decoration: none;color:white">
 				<div class="icon_wrap bg-danger">
 					<div class="icon">
-					<a href="<?php echo site_url('sistem/logout'); ?>" style="text-decoration: none;color:white"><i class="fas fa-sign-out-alt"></i></a>
+						<i class="fas fa-sign-out-alt"></i>
 					</div>
 				</div>
+				</a>
 			</div>
 		</div>
 	</div>
