@@ -13,26 +13,26 @@
 		}
 
 		/* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
+		::-webkit-scrollbar {
+		width: 5px;
+		}
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #4E73DF; 
-  border-radius: 10px;
-}
+		/* Track */
+		::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 5px grey; 
+		border-radius: 10px;
+		}
+		
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+		background: #4E73DF; 
+		border-radius: 10px;
+		}
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
-}
+		/* Handle on hover */
+		::-webkit-scrollbar-thumb:hover {
+		background: #b30000; 
+		}
 
 	</style>
 	<title>home</title>
@@ -173,10 +173,10 @@
 				<div class="card-body" style="height:400px;overflow: auto">
 					<div class="row no-gutters align-items-center">
 
-						<?php
+				<?php
               	if ($c_user>0){
-                foreach ($user_online as $datas){
-              ?>
+                	foreach ($user_online as $datas){
+              	?>
 
 						<div class="col-12 mr-2 card mt-3 p-md-2 border-0 shadow">
 							<div class="row">
@@ -184,33 +184,47 @@
 									<img src="<?php echo base_url().'assets/'.$datas->image; ?>"
 										class="shadow gambar_employee" alt="...">
 								</div>
-								<div class='col-6 pt-0'>
+								<div class='col-5 pt-0'>
 									<b style="font-size:30px"><?php echo $datas->username;?></b>
-									<p class="card-text"><small class="text-success"><?php echo $datas->email;?></small>
+									<p class="card-text" style="margin-top:-8px"><small class="text-primary"><?php echo $datas->email;?></small>
 									</p>
 								</div>
-								<div class="col-2 pt-2">
+								<div class="col-4 pt-2">
 									<?php
 										if ($datas->status_login=="Online") {
 											echo '<i class="fas fa-user-check text-success">Online</i>';
 										} else if($datas->status_login=="Offline"){
-											echo '<i class="fas fa-user-alt-slash text-danger text-10">Offline</i>';
+											echo '<i class="fas fa-user-alt-slash text-danger text-10 mb-2">Offline</i>';
 										}
 									?>
-
-
+									<p class="card-text"><small class="text-primary"><?php echo $datas->last_seen;?></small>
 								</div>
 							</div>
 						</div>
-
-
-
-
-						<?php
+				<?php
                 }}
                   ?>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="col-xl-6 col-md-6 mb-4">
+			<div class="card shadow h-100 py-2">
+				<div class="col-12 mr-2">
+						<div class="row mb-2">
+							<div class="col-12">
+								<h3>Diagram</h3>
+							</div>						
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="row no-gutters align-items-center">
+							<div class="col mr-2">
+								
+							</div>							
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
