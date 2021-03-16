@@ -171,7 +171,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="card-body" style="height:510px;overflow: auto">
+				<div class="card-body" style="max-height:510px;overflow: auto">
 					<div class="row no-gutters align-items-center">
 
 				<?php
