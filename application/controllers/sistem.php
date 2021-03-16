@@ -74,9 +74,11 @@
             $usernames = $this -> input->post('user');
             $passwords = $this -> input->post('pass');
 
+
             $where = array (
                 'username' => $usernames,
-                'password' => $passwords
+                // 'password' => $passwords
+                'password' => password_verify($passwords)
             );
             $cek = $this ->modelsistem->cek_login("user",$where)->num_rows();
 

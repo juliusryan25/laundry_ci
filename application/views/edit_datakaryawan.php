@@ -68,7 +68,7 @@
                               <label class="input-group-text" style="width: 97px; text-align: center;" for="inputGroupSelect01">Status</label>
                             </div>
                             <select class="custom-select" name="status" id="inputGroupSelect01">
-                              <option selected>Choose...</option>
+                              <option selected value="<?php echo $e->status; ?>"><?php echo $e->status; ?></option>
                               <option value="Admin">Admin</option>
                               <option value="Kasir">Kasir</option>
                               <option value="Owner">Owner</option>
@@ -78,9 +78,9 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text" style="width: 97px;" id="inputGroupFileAddon01" >Images</span>
                             </div>  
-                            <div class="custom-file">
+                            <div >
                               <input type="file" value="<?php echo $e->image; ?>" class="custom-file-input" id="inputGroupFile01" name="gambar" aria-describedby="inputGroupFileAddon01">
-                              <label style="text-align:left" class="custom-file-label" for="inputGroupFile01">Choose...</label>
+                              <label style="text-align:left" class="custom-file-label" for="inputGroupFile01"><?php echo $e->image; ?></label>
                             </div>
                           </div> 
                           <center>                      
@@ -88,11 +88,9 @@
                          
                          <?php endforeach ?>
                          </form>
-                         <a href="<?php echo site_url('sistem/index/data_karyawan'); ?>"><button   class="btn btn-danger mt-1"> Cancel </button></a>&nbsp&nbsp&nbsp
+                         <a href="<?php echo site_url('sistem/index/data_karyawan'); ?>"><button class="btn btn-danger mt-1"> Cancel </button></a>&nbsp&nbsp&nbsp
                          </center>
-                        </div>
-                        
-                        
+                        </div>                                                
                        </div> 
                       </div>
                     </div>

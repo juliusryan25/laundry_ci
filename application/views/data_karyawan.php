@@ -23,7 +23,7 @@
 							<td>Username</td>
 							<td>Email</td>
 							<td>No.Telp</td>
-							<td>Password</td>
+							<!-- <td>Password</td> -->
 							<td>Id_Outlet</td>
 							<td>Status</td>
 							<td>Images</td>
@@ -40,7 +40,7 @@
 							<td><?php echo $datas->username;?></td>
 							<td><?php echo $datas->email;?></td>
 							<td><?php echo $datas->no_telp;?></td>
-							<td><?php echo $datas->password;?></td>
+							<!-- <td><?php echo $datas->password;?></td> -->
 							<td><?php foreach($outlet as $cabang) : ?>
 								<?php if( $cabang->id_outlet == $datas->id_outlet) { ?>
 								<?= $cabang->nama; ?>

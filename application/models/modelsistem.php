@@ -24,14 +24,15 @@ Class modelsistem extends CI_Model{
         $filename = $this->upload->file_name;
         $this->upload->initialize($config);
         $this->upload->do_upload('gambar');
-        $data = $this->upload->data();
+        $data = $this->upload->data();  
 
         $data = array(
             'id_user' => "",
             'username' => $this->input->post('username'),
             'email' => $this->input->post('email'),
             'no_telp' => $this->input->post('telepon'),
-            'password' => $this->input->post('password'),
+            // 'password' => $this->input->post('password'),
+            'password' => password_hash($this->input->post('password'),PASSWORD_DEFAULT),
             'id_outlet' => $this->input->post('id_outlet'),
             'status' => $this->input->post('status'),
             'image' => $data['file_name']
@@ -87,7 +88,8 @@ Class modelsistem extends CI_Model{
             'email' => $this->input->post('email'),
             'no_telp' => $this->input->post('telepon'),
             'id_outlet' => $this->input->post('id_outlet'),
-            'password' => $this->input->post('password'),
+            // 'password' => $this->input->post('password'),
+            'password' => password_hash($this->input->post('password'),PASSWORD_DEFAULT),
             'status' => $this->input->post('status'),
             'image' => $data['file_name']
         );
