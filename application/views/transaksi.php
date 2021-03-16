@@ -126,7 +126,7 @@
 															<div class="input-group-text"
 																style="width: 97px; text-align: center;">Qty</div>
 														</div>
-														<input type="number" value="1" class="form-control" id="qty"
+														<input type="number" value="1" onkeyup="qty()" class="form-control" id="qty"
 															name="qty" placeholder="">
 													</div>
 												</div>
@@ -208,7 +208,7 @@
 															<div class="input-group-text bg-primary text-light"
 																style="width: 97px; text-align: center;">Bayar</div>
 														</div>
-														<input type="text" class="form-control" id="bayar"
+														<input type="text" onkeyup="kembalian()" class="form-control" id="bayar"
 															name="uang_bayar" placeholder="">
 													</div>
 												</div>
@@ -220,7 +220,7 @@
 															<div class="input-group-text"
 																style="width: 97px; text-align: center;">Kembalian</div>
 														</div>
-														<input type="text" readonly class="form-control" id="kembalian"
+														<input type="text"  readonly class="form-control" id="kembalian"
 															name="kembalian" placeholder="">
 													</div>
 												</div>
@@ -800,7 +800,7 @@
 						$("#total_harga").val(total);
 						$("#harga").val(harga);
 						$("#diskon").val(diskon);
-
+						kembalian();
 					} else {
 						var nilai_harga = harga;
 						var nilai_diskon = diskon;
@@ -815,20 +815,38 @@
 						$("#pajak").val(pajak);
 						$("#harga").val(harga);
 						$("#diskon").val(diskon);
+						kembalian();
 
 
 					}
 				}
 			});
 		});
+		
+		function qty(){	
+			var qty = $("#qty").val();
+			var harga = $("#harga").val();
+			var pajak = $("#pajak").val();
+			var diskon = $("#diskon").val();
 
-		$("#kembalian").keyup(function () {
+			var jumlah= qty * harga;
+			var jumlah2 = Number(jumlah - diskon);
+			var jumlah3 = Number(jumlah2) + Number(pajak);
+			$("#total_harga").val(jumlah3);
+			kembalian();
+
+		}
+
+		function kembalian(){
+			
 			var total = $("#total_harga").val();
 			var bayar = $("#bayar").val();
 			var kembali = bayar - total;
 
 			$("#kembalian").val(kembali);
-		});
+		
+		};
+		
 
 
 		function cancel() {
