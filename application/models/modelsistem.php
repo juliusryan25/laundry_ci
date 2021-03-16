@@ -392,6 +392,15 @@ Class modelsistem extends CI_Model{
         
     }
 
+    public function get_total_lunas(){
+        $data = $this->db->query("SELECT * FROM tb_transaksi where status_bayar='dibayar'");
+        return $data->num_rows();
+    }
+    public function get_total_pending(){
+        $data = $this->db->query("SELECT * FROM tb_transaksi where status_bayar='belum_dibayar'");
+        return $data->num_rows();
+    }
+
     
 
    

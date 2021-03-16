@@ -1,4 +1,5 @@
 <main role="main" class="container-fluid">
+<link rel="stylesheet" href="<?php echo base_url().'assets/css/morris.css'?>">
 	<style>
 		.menu_card:hover {
 			background: linear-gradient(to right, white, whitesmoke);
@@ -170,7 +171,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="card-body" style="max-height:400px;overflow: auto">
+				<div class="card-body" style="height:510px;overflow: auto">
 					<div class="row no-gutters align-items-center">
 
 				<?php
@@ -216,7 +217,7 @@
 								<h3>Info</h3>
 							</div>	
 							<div class="col-xl-6 col-md-6 mb-4">
-								<div class="card border-left-success shadow h-100 py-2 menu_card">
+								<div class="card border-left-success shadow-sm h-100 py-2 menu_card">
 										<div class="card-body">
 											<div class="row no-gutters align-items-center">
 												<div class="col mr-2">
@@ -235,7 +236,7 @@
 								</div>
 							</div>	
 							<div class="col-xl-6 col-md-6 mb-4">
-								<div class="card border-left-warning shadow h-100 py-2 menu_card">
+								<div class="card border-left-warning shadow-sm h-100 py-2 menu_card">
 										<div class="card-body">
 											<div class="row no-gutters align-items-center">
 												<div class="col mr-2">
@@ -253,15 +254,15 @@
 									</a>
 								</div>
 							</div>	
-							<div class="col-xl-6 col-md-6 mb-4">
-								<div class="card border-left-primary shadow h-100 py-2 menu_card">
+							<div class="col-xl-12 col-md-6 mb-4">
+								<div class="card  shadow-sm h-100 py-2 ">
+								
 										<div class="card-body">
+											<h4 style="margin-top:-12px">Status Transaksi</h4>
 											<div class="row no-gutters align-items-center">
 												<div class="col mr-2">
 													<center>
-														<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Transaksi Lunas</div>
-														<div class="h5 mb-0 font-weight-bold text-gray-800">
-															<?php echo $total_transaksi_harian;?></div>
+													<div id="graph" style="height: 250px;"></div>
 													</center>
 												</div>
 												<!-- <div class="col-auto">
@@ -271,26 +272,7 @@
 										</div>
 									</a>
 								</div>
-							</div>	
-							<div class="col-xl-6 col-md-6 mb-4">
-								<div class="card border-left-danger shadow h-100 py-2 menu_card">
-										<div class="card-body">
-											<div class="row no-gutters align-items-center">
-												<div class="col mr-2">
-													<center>
-														<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">transaksi Pending</div>
-														<div class="h5 mb-0 font-weight-bold text-gray-800">
-															<?php echo $total_transaksi_harian;?></div>
-													</center>
-												</div>
-												<!-- <div class="col-auto">
-													<i class="fas fa-money-check-alt fa-2x text-gray-300"></i>
-												</div> -->
-											</div>
-										</div>
-									</a>
-								</div>
-							</div>												
+							</div>																	
 						</div>
 					</div>
 					
@@ -298,4 +280,22 @@
 			</div>
 		</div>
 	</div>
+
+	<script src="<?php echo base_url().'assets/js/jquery.min.js'?>"></script>
+    <script src="<?php echo base_url().'assets/js/raphael-min.js'?>"></script>
+    <script src="<?php echo base_url().'assets/js/morris.min.js'?>"></script>
+    <script>
+      var colorDanger = "#FF1744";
+	  var colorSuccess = "#1CC88A"
+Morris.Donut({
+  element: 'graph',
+  resize: true,
+  
+  data: [
+    {label:"Pending", value:<?php echo $total_pending;?>, color:colorDanger},
+    {label:"Lunas", value:<?php echo $total_lunas;?>,color:colorSuccess},   
+  ]
+});
+
+    </script>
 </main>

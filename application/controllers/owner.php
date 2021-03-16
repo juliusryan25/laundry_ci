@@ -33,6 +33,8 @@ class owner extends CI_Controller {
         $data['total_transaksi_harian'] = $this->modelsistem->get_transaksi_harian($id); 
         $data['total_transaksi_hari'] = $this->modelsistem->get_pendapatan_hari(); 
         $data['total_pendapatan'] = $this->modelsistem->get_pendapatan();
+        $data['total_lunas'] = $this->modelsistem->get_total_lunas();
+        $data['total_pending'] = $this->modelsistem->get_total_pending();
         $this->load->view('indexowner',$data);
     }
     public function homeowner(){
