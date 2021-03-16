@@ -27,7 +27,7 @@ class kasir extends CI_Controller {
         $data['c_outlet'] = $this->modelsistem->count_outlet();
         $data['paket'] = $this->modelsistem->get_paket();
         $data['c_paket'] = $this->modelsistem->count_paket(); 
-        $data['total_transaksi_harian'] = $this->modelsistem->get_transaksi_harian($id); 
+        $data['total_transaksi_harian'] = $this->modelsistem->get_transaksi_day1($id); 
         $data['paket_outlet'] = $this->modelsistem->get_db_paket_outlet($id);
         $this->load->view('indexkasir',$data);
     }
@@ -38,7 +38,10 @@ class kasir extends CI_Controller {
 
         $judul['title'] = "Home";
         $this->load->view('homekasir',$judul);
+        
     }
+
+    ///MEMBER///
     public function memberkasir(){
         if ($this->session->userdata('status_log') != 'Online') {
             redirect('sistem/login');
@@ -46,5 +49,25 @@ class kasir extends CI_Controller {
 
         $judul['title'] = "member";
         $this->load->view('memberkasir',$judul);
+    }
+
+    public function simpan_member_kasir(){
+        $this->modelsistem->simpan_member_kasir();
+    }
+
+    public function edit_data_member($id){
+        $data['member'] = $this->modelsistem->get_member();
+        $data['c_member'] = $this->modelsistem->count_member();
+        $data['data_edit'] = $this->modelsistem->get_data_edit($id);
+        $this->load->view('indexkasir',$data);
+    }
+
+    public function aksi_edit(){
+        $this->modelsistem->edit_db_kasir();
+    }
+
+    public function delete_data($id){
+        $this->modelsistem->delete_db($id);
+        header("Location:".base_url().'kasir/indexkasir/memberkasir');
     }
 }

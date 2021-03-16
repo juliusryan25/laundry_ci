@@ -29,7 +29,10 @@ class owner extends CI_Controller {
         $data['paket'] = $this->modelsistem->get_paket();
         $data['c_paket'] = $this->modelsistem->count_paket(); 
         $data['c_transaksi_outlet'] = $this->modelsistem->count_transaksi_outlet($id);
+        $data['c_transaksi'] = $this->modelsistem->count_transaksi();
         $data['total_transaksi_harian'] = $this->modelsistem->get_transaksi_harian($id); 
+        $data['total_transaksi_hari'] = $this->modelsistem->get_pendapatan_hari(); 
+        $data['total_pendapatan'] = $this->modelsistem->get_pendapatan();
         $this->load->view('indexowner',$data);
     }
     public function homeowner(){

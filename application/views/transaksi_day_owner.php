@@ -7,7 +7,7 @@
 			&nbsp&nbsp&nbsp&nbsp<h3>Transaksi / Day</h3>
 		</div>
 		<div class="col-2">
-			<a href="<?php echo site_url('sistem/cetakDataTransaksiDay_excel'); ?>" class="btn btn-success col-12 mt-4">
+			<a href="<?php echo site_url('sistem/cetakDataTransaksiDay_excel_owner'); ?>" class="btn btn-success col-12 mt-4">
 				Generate XLS <i class="fas fa-file"></i> </a>
 		</div>
     
@@ -69,7 +69,7 @@
 				$.ajax({
 					type: 'GET',
 					async: false,
-					url: '<?php echo base_url()."index.php/sistem/transaksi_day"?>',
+					url: '<?php echo base_url()."index.php/sistem/transaksi_day1"?>',
 					dataType: 'json',
 					success: function (data) {
 						var baris = '';

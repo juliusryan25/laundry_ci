@@ -56,7 +56,7 @@
             $data['member'] = $this->modelsistem->get_db_member();
             $data['usern'] = $this->modelsistem->get_db_user();
             $data['membern'] = $this->modelsistem->get_db_member(); 
-            $data['total_transaksi_harian'] = $this->modelsistem->get_transaksi_harian($id);           
+            $data['total_transaksi_harian'] = $this->modelsistem->get_transaksi_day1($id);           
             $this->load->view('index',$data);
         }
        
@@ -228,7 +228,7 @@
 
         public function simpan_member(){
             $this->modelsistem->simpan_member();
-        }
+        }        
 
         public function delete_data($id){
             $this->modelsistem->delete_db($id);
@@ -422,6 +422,12 @@
         function transaksi_day(){
             $id = $this->session->userdata('out');
             $data_transaksi_day = $this->modelsistem->get_transaksi_day($id);
+            echo json_encode($data_transaksi_day);             
+            
+        }
+        function transaksi_day1(){
+            $id = $this->session->userdata('out');
+            $data_transaksi_day = $this->modelsistem->get_transaksi_harian1($id);
             echo json_encode($data_transaksi_day);             
             
         }
@@ -672,6 +678,18 @@
             $id = $this->session->userdata('out');
 
             $data['transaksi']=$this->modelsistem->get_transaksi_day($id);
+            $this->load->view('cetak/excel_datatransaksi_preview',$data);
+
+        }
+        public function cetakDataTransaksiDay_excel_owner(){
+            header('Content-Type: application / vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="Data_Transaksi.xls"');
+            //namafilenya//
+            header('Cache-Control: max-age=0');
+
+            $id = $this->session->userdata('out');
+
+            $data['transaksi']=$this->modelsistem->get_transaksi_harian1($id);
             $this->load->view('cetak/excel_datatransaksi_preview',$data);
 
         }

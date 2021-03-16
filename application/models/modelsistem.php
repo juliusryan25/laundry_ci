@@ -46,7 +46,7 @@ Class modelsistem extends CI_Model{
             return $data->result();
         }
         public function get_user_online($id){
-            $data = $this->db->query("SELECT * FROM `user` WHERE id_outlet='$id' ORDER BY `user`.`status_login` DESC ");
+            $data = $this->db->query("SELECT * FROM `user` ORDER BY `user`.`status_login` DESC ");
             return $data->result();
         }
 
@@ -118,6 +118,21 @@ Class modelsistem extends CI_Model{
         header("Location:".base_url().'sistem/index/member1');
     }
 
+    public function simpan_member_kasir(){
+
+        $data_member = array(
+            'id_member' => "",
+            'nama' => $this->input->post('nama'),
+            'alamat' => $this->input->post('alamat'),
+            'jenis_kelamin' => $this->input->post('jeniskelamin'),
+            'tlp' => $this->input->post('telepon')
+
+        );
+
+        $this->db->insert('tb_member', $data_member);
+        header("Location:".base_url().'kasir/indexkasir/memberkasir');
+    }
+
     public function get_member(){
         $data = $this->db->get('tb_member');
         return $data->result();
@@ -152,6 +167,23 @@ Class modelsistem extends CI_Model{
         $this->db->where('id_member',$id);
         $this->db->update('tb_member',$data);
         header("Location:".base_url().'sistem/index/member1');
+
+    }
+    public function edit_db_kasir(){
+
+        $id = $this->input->post('id');
+        $data = array(
+            'id_member' => "$id",
+            'nama' => $this->input->post('nama'),
+            'alamat' => $this->input->post('alamat'),
+            'jenis_kelamin' => $this->input->post('jeniskelamin'),
+            'tlp' => $this->input->post('telepon')
+            
+        );   
+
+        $this->db->where('id_member',$id);
+        $this->db->update('tb_member',$data);
+        header("Location:".base_url().'kasir/indexkasir/memberkasir');
 
     }
 
@@ -271,8 +303,12 @@ Class modelsistem extends CI_Model{
         $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id' AND tgl_order=DATE(NOW())");
         return $data->result();
     }
+    public function get_transaksi_day1($id){
+        $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id' AND tgl_order=DATE(NOW())");
+        return $data->num_rows();
+    }
     public function get_transaksi_outlet($id){
-        $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id'");
+        $data = $this->db->query("SELECT * FROM tb_transaksi ");
         return $data->result();
     }
     public function get_transaksi_struk($id){
@@ -289,9 +325,13 @@ Class modelsistem extends CI_Model{
         $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id'");
         return $data->num_rows();
     }
-    public function get_transaksi_harian($id){
-        $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id' AND tgl_order=DATE(NOW())");
+    public function get_transaksi_harian(){
+        $data = $this->db->query("SELECT * FROM tb_transaksi where tgl_order=DATE(NOW())");
         return $data->num_rows();
+    }
+    public function get_transaksi_harian1(){
+        $data = $this->db->query("SELECT * FROM tb_transaksi where tgl_order=DATE(NOW())");
+        return $data->result();
     }
     public function get_data_paket1($id){
         // $data = $this->db->query("SELECT * FROM $table where id_paket='$where'");
@@ -339,5 +379,20 @@ Class modelsistem extends CI_Model{
     $this->db->update($table,$data);
      
     }
+
+    public function get_pendapatan(){
+        $data = $this->db->query('SELECT SUM(total) AS Rp FROM tb_transaksi');
+        return $data->result();
+        
+    }
+
+    public function get_pendapatan_hari(){
+        $data = $this->db->query('SELECT Round(AVG(total)) AS Rp FROM tb_transaksi WHERE tgl_order = DATE(NOW())');
+        return $data->result();
+        
+    }
+
+    
+
    
 }

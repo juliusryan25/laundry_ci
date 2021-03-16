@@ -120,7 +120,7 @@
 									<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Transaksi
 										(ALL)</div>
 									<div class="h5 mb-0 font-weight-bold text-gray-800">
-										<?php echo $c_transaksi_outlet;?></div>
+										<?php echo $c_transaksi;?></div>
 								</center>
 							</div>
 							<div class="col-auto">
@@ -178,15 +178,15 @@
                 	foreach ($user_online as $datas){
               	?>
 
-						<div class="col-12 mr-2 card mt-3 p-md-2 border-0 shadow-sm">
+						<div class="col-12 mr-2 card mb-3 p-md-2 border-0 shadow-sm">
 							<div class="row">
 								<div class='col-3'>
 									<img src="<?php echo base_url().'assets/'.$datas->image; ?>"
 										class="shadow-sm gambar_employee" alt="...">
 								</div>
 								<div class='col-5 pt-0'>
-									<b style="font-size:30px"><?php echo $datas->username;?></b>
-									<p class="card-text" style="margin-top:-8px"><small class="text-primary"><?php echo $datas->email;?></small>
+									<b style="font-size:25px"><?php echo $datas->username;?></b>
+									<p class="card-text" style="margin-top:-5px"><small class="text-primary">Outlet : <?php echo $datas->id_outlet;?></small>
 									</p>
 								</div>
 								<div class="col-4 pt-2">
@@ -194,7 +194,7 @@
 										if ($datas->status_login=="Online") {
 											echo '<i class="fas fa-user-check text-success">Online</i>';
 										} else if($datas->status_login=="Offline"){
-											echo '<i class="fas fa-user-alt-slash text-danger text-10 mb-2">Offline</i>';
+											echo '<i class="fas fa-user-alt-slash text-danger text-10 mb-0">Offline</i>';
 										}
 									?>
 									<p class="card-text"><small class="text-primary"><?php echo $datas->last_seen;?></small>
@@ -212,18 +212,88 @@
 			<div class="card shadow h-100 py-2">
 				<div class="col-12 mr-2">
 						<div class="row mb-2">
-							<div class="col-12 shadow-sm" style="height:49px">
-								<h3>Diagram</h3>
-							</div>						
+							<div class="col-12 shadow-sm mb-3" style="height:49px">
+								<h3>Info</h3>
+							</div>	
+							<div class="col-xl-6 col-md-6 mb-4">
+								<div class="card border-left-success shadow h-100 py-2 menu_card">
+										<div class="card-body">
+											<div class="row no-gutters align-items-center">
+												<div class="col mr-2">
+													<center>
+														<div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Pendapatan</div>
+														<div class="h5 mb-0 font-weight-bold text-gray-800">
+															<?php echo json_encode( $total_pendapatan ,JSON_NUMERIC_CHECK );?></div>
+													</center>
+												</div>
+												<!-- <div class="col-auto">
+													<i class="fas fa-money-check-alt fa-2x text-gray-300"></i>
+												</div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>	
+							<div class="col-xl-6 col-md-6 mb-4">
+								<div class="card border-left-warning shadow h-100 py-2 menu_card">
+										<div class="card-body">
+											<div class="row no-gutters align-items-center">
+												<div class="col mr-2">
+													<center>
+														<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Rata-rata Pendapatan / Hari</div>
+														<div class="h5 mb-0 font-weight-bold text-gray-800">
+															<?php echo json_encode($total_transaksi_hari,JSON_NUMERIC_CHECK );?></div>
+													</center>
+												</div>
+												<!-- <div class="col-auto">
+													<i class="fas fa-money-check-alt fa-2x text-gray-300"></i>
+												</div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>	
+							<div class="col-xl-6 col-md-6 mb-4">
+								<div class="card border-left-primary shadow h-100 py-2 menu_card">
+										<div class="card-body">
+											<div class="row no-gutters align-items-center">
+												<div class="col mr-2">
+													<center>
+														<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Transaksi Lunas</div>
+														<div class="h5 mb-0 font-weight-bold text-gray-800">
+															<?php echo $total_transaksi_harian;?></div>
+													</center>
+												</div>
+												<!-- <div class="col-auto">
+													<i class="fas fa-money-check-alt fa-2x text-gray-300"></i>
+												</div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>	
+							<div class="col-xl-6 col-md-6 mb-4">
+								<div class="card border-left-danger shadow h-100 py-2 menu_card">
+										<div class="card-body">
+											<div class="row no-gutters align-items-center">
+												<div class="col mr-2">
+													<center>
+														<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">transaksi Pending</div>
+														<div class="h5 mb-0 font-weight-bold text-gray-800">
+															<?php echo $total_transaksi_harian;?></div>
+													</center>
+												</div>
+												<!-- <div class="col-auto">
+													<i class="fas fa-money-check-alt fa-2x text-gray-300"></i>
+												</div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>												
 						</div>
 					</div>
-					<div class="card-body">
-						<div class="row no-gutters align-items-center">
-							<div class="col mr-2">
-								
-							</div>							
-						</div>
-					</div>
+					
 				</a>
 			</div>
 		</div>
