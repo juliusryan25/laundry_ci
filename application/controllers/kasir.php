@@ -29,7 +29,7 @@ class kasir extends CI_Controller {
         $data['c_paket'] = $this->modelsistem->count_paket(); 
         $data['total_transaksi_harian'] = $this->modelsistem->get_transaksi_day1($id); 
         $data['paket_outlet'] = $this->modelsistem->get_db_paket_outlet($id);
-        $this->load->view('indexkasir',$data);
+        $this->load->view('index/indexkasir',$data);
     }
     public function homekasir(){
         if ($this->session->userdata('status_log') != 'Online') {

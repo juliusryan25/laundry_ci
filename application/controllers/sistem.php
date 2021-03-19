@@ -38,7 +38,7 @@
             $data['usern'] = $this->modelsistem->get_db_user();
             $data['membern'] = $this->modelsistem->get_db_member(); 
             $data['total_transaksi_harian'] = $this->modelsistem->get_transaksi_day1($id);           
-            $this->load->view('index',$data);
+            $this->load->view('index/index',$data);
         }
        
         ///Login///

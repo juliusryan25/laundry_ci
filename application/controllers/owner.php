@@ -35,7 +35,7 @@ class owner extends CI_Controller {
         $data['total_pendapatan'] = $this->modelsistem->get_pendapatan();
         $data['total_lunas'] = $this->modelsistem->get_total_lunas();
         $data['total_pending'] = $this->modelsistem->get_total_pending();
-        $this->load->view('indexowner',$data);
+        $this->load->view('index/indexowner',$data);
     }
     public function homeowner(){
         if ($this->session->userdata('status_log') != 'Online') {
