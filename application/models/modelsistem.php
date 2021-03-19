@@ -101,8 +101,6 @@ Class modelsistem extends CI_Model{
         }
 
         
-
-
     ///MEMBER///
 
     public function simpan_member(){
@@ -297,6 +295,7 @@ Class modelsistem extends CI_Model{
 
 }
     ////transaksi////
+    
     public function get_transaksi($id){
         $data = $this->db->query("SELECT * FROM tb_transaksi where id_outlet='$id'");
         return $data->result();
