@@ -33,109 +33,33 @@
 </head>
 
 <body>
-
-	<!-- <div class="wrapper"> -->
-
-		<!-- <div class="top_navbar fixed-top">
-			<div class="logo">
-				<a href="#">Starbhak Laundry</a>
-			</div>
-			<div class="top_menu">
-				<div class="home_link">
-					<a style="text-decoration:none" href="<?php echo site_url('kasir/indexkasir/homekasir'); ?>">
-						<span class="icon"><i class="fas fa-home"></i></span>
-						<span>Home</span>
-					</a>
-				</div>
-				<div class="right_info">
-					<div class="">
-						<div class="" style="padding:0px">
-							<img src="<?php echo base_url().'assets/'.$this->session->userdata('gambar'); ?>"
-								style="width:43px;border-radius:5px;" alt="...">
-						</div>
-					</div>
-					<div class="icon_wrap bg-danger">
-						<div class="icon">
-							<a href="<?php echo site_url('sistem/logout'); ?>"
-								style="text-decoration: none;color:white"><i class="fas fa-sign-out-alt"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-		<!-- <div class="main_body"> -->
-
-			<!-- <div class="sidebar_menu">
-				<div class="inner__sidebar_menu">
-
-					<ul>
-						<li>
-							<a href="<?php echo site_url('owner/indexowner/homeowner'); ?>">
-								<span class="icon">
-									<i class="fas fa-border-all"></i></span>
-								<span class="list">Home</span>
-							</a>
-						</li>
-						<li>
-							<a href="<?php echo site_url('owner/indexowner/report'); ?>">
-								<span class="icon"><i class="fas fa-file-archive"></i></span>
-								<span class="list">Report</span>
-							</a>
-						</li>
-					</ul>
-
-					<div class="hamburger">
-						<div class="inner_hamburger">
-							<span class="arrow">
-								<i class="fas fa-long-arrow-alt-left"></i>
-								<i class="fas fa-long-arrow-alt-right"></i>
-							</span>
-						</div>
-					</div>
-
-				</div>
-			</div> -->	
-	<!-- </div>
-	</div>
-	</div> -->
 	<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<?php
+		<div class="row">
+			<div class="col-12">
+				<?php
 					if ($this->uri->segment(3) == "homeowner") {
-						$this->load->view('homeowner');
+						$this->load->view('home/homeowner');
 					}
 					else if($this->uri->segment(3) == "transaksi_day_owner") {
-						$this->load->view('transaksi_day_owner');
+						$this->load->view('transaksi/transaksi_day_owner');
 					}
 					else if ($this->uri->segment(3) == "outlet_owner") {
-						$this->load->view('outlet_owner');
+						$this->load->view('outlet/outlet_owner');
 						
 					}
 					else if ($this->uri->segment(3) == "member_owner") {
-						$this->load->view('member_owner');
+						$this->load->view('member/member_owner');
 						
 					}
 					else if ($this->uri->segment(3) == "transaksi_outlet") {
-						$this->load->view('transaksi_outlet');
+						$this->load->view('transaksi/transaksi_outlet');
 						
 					}
 					?>
-						<!-- <div class="item_wrap" >
-	    		<div class="item"> -->
-						<?php                        
-       		  
-		  if ($this->uri->segment(3) == "report") {
-            $this->load->view('report');
-            
-          }		          
-		
-		?>
-					</div>
-				</div>
 			</div>
 		</div>
+	</div>
+	</div>
 	</div>
 
 

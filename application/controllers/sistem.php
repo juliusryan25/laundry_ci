@@ -5,26 +5,7 @@
         public function __construct(){
             parent::__construct();
             $this->load->model('modelsistem');
-        }
-
-        public function indexif(){
-            if ($this->session->userdata('status_log')!= 'Online') {
-                redirect('sistem/login');
-            }else if($this->session->userdata('status_log')== 'Online'  && $this->session->userdata('stat') == 'admin'){
-                redirect('sistem/index/home/'.$this->session->userdata('usernama'));
-            }
-            else if($this->session->userdata('status_log')== 'Online'  && $this->session->userdata('stat') == 'kasir'){
-                redirect('kasir/indexkasir/homekasir/'.$this->session->userdata('usernama'));
-            }
-            else if($this->session->userdata('status_log')== 'Online'  && $this->session->userdata('stat') == 'owner'){
-                redirect('owner/indexowner/homeowner/'.$this->session->userdata('usernama'));
-            }           
-        }
-
-        public function index1(){
-            $data['title'] = "Data Karyawan";
-            $this->load->view('index1', $data);
-        }
+        }        
       
 
         public function index(){
@@ -62,9 +43,9 @@
        
         ///Login///
         public function login(){
-            // if($this->session->userdata('status_log')=='Online'){
-            //     redirect('sistem/indexif');
-            // }
+            if($this->session->userdata('status_log')=='Online'){
+                redirect('sistem/indexif');
+            }
 
             $judul['title'] = "Login";
             $this->load->view('login',$judul);
@@ -108,27 +89,7 @@
                     }else{
                         $this->session->sess_destroy();
                         redirect(base_url().'sistem/login');
-                    }
-                
-             
-                    // if ($this->session->userdata('status_log') == 'Online') {
-                    //     header("Location:".base_url().'kasir/indexkasir/homekasir/'.$this->session->userdata('usernama'));
-                        
-                    // }else{
-                    //     $this->session->sess_destroy();
-                    //     redirect(base_url().'sistem/login');
-                    // }
-                
-              
-                    // if ($this->session->userdata('status_log') == 'Online') {
-                    //     header("Location:".base_url().'sistem/index/report/'.$this->session->userdata('usernama'));
-                        
-                    // }else{
-                    //     $this->session->sess_destroy();
-                    //     redirect(base_url().'sistem/login');
-                    // }
-                
-
+                    }                            
                
             }
             else {
@@ -138,6 +99,21 @@
             }
             
         }
+
+        public function indexif(){
+            if ($this->session->userdata('status_log')!= 'Online') {
+                redirect('sistem/login');
+            }else if($this->session->userdata('status_log')== 'Online'  && $this->session->userdata('stat') == 'admin'){
+                redirect('sistem/index/home/'.$this->session->userdata('usernama'));
+            }
+            else if($this->session->userdata('status_log')== 'Online'  && $this->session->userdata('stat') == 'kasir'){
+                redirect('kasir/indexkasir/homekasir/'.$this->session->userdata('usernama'));
+            }
+            else if($this->session->userdata('status_log')== 'Online'  && $this->session->userdata('stat') == 'owner'){
+                redirect('owner/indexowner/homeowner/'.$this->session->userdata('usernama'));
+            }           
+        }
+
 
         ///Logout///
         public function logout(){

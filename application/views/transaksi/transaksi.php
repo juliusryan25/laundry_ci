@@ -224,38 +224,7 @@
 															name="kembalian" placeholder="">
 													</div>
 												</div>
-
-												<div class="col-sm-6">
-													<label class="sr-only" for="inlineFormInputGroup">Status</label>
-													<div class="input-group mb-2">
-														<div class="input-group-prepend">
-															<label class="input-group-text bg-primary text-light"
-																style="width: 115px; text-align: center;"
-																for="inputGroupSelect01">Status Bayar</label>
-														</div>
-														<select class="custom-select" name="status_bayar"
-															id="inputGroupSelect01">
-															<option value="" selected>Choose...</option>
-															<option value="dibayar">Dibayar</option>
-															<option value="belum_dibayar">Belum_dibayar</option>
-															<option value="kurang">Kurang</option>
-														</select>
-													</div>
-												</div>
-
-												<div class="col-sm-6">
-													<label class="sr-only" for="inlineFormInputGroup">tgl</label>
-													<div class="input-group mb-2">
-														<div class="input-group-prepend">
-															<div class="input-group-text  bg-primary text-light"
-																style="width: 97px; text-align: center;">Tgl Order</div>
-														</div>
-														<input type="date" class="form-control" id="tanggal_order"
-															name="tanggal_order" placeholder=""
-															value="<?php echo date('Y-m-d') ?>">
-													</div>
-												</div>
-
+												
 												<div class="col-sm-6">
 													<label class="sr-only" for="inlineFormInputGroup">Status</label>
 													<div class="input-group mb-2">
@@ -272,6 +241,38 @@
 															<option value="selesai">Selesai</option>
 															<option value="diambil">Diambil</option>
 
+														</select>
+													</div>
+												</div>
+												
+
+												<div class="col-sm-6">
+													<label class="sr-only" for="inlineFormInputGroup">tgl</label>
+													<div class="input-group mb-2">
+														<div class="input-group-prepend">
+															<div class="input-group-text  bg-primary text-light"
+																style="width: 97px; text-align: center;">Tgl Order</div>
+														</div>
+														<input type="date" class="form-control" id="tanggal_order"
+															name="tanggal_order" placeholder=""
+															value="<?php echo date('Y-m-d') ?>">
+													</div>
+												</div>												
+
+												<div class="col-sm-6">
+													<label class="sr-only" for="inlineFormInputGroup">Status</label>
+													<div class="input-group mb-2">
+														<div class="input-group-prepend">
+															<label class="input-group-text bg-primary text-light"
+																style="width: 115px; text-align: center;"
+																for="inputGroupSelect01">Status Bayar</label>
+														</div>
+														<select class="custom-select" name="status_bayar"
+															id="inputGroupSelect01">
+															<option value="" selected>Choose...</option>
+															<option value="dibayar">Dibayar</option>
+															<option value="belum_dibayar">Belum_dibayar</option>
+															<option value="kurang">Kurang</option>
 														</select>
 													</div>
 												</div>

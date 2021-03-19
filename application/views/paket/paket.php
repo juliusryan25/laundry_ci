@@ -71,7 +71,6 @@
                   ?>
 					</tbody>
 			</div>
-			</div>
 		</div>
 	</div>
 
