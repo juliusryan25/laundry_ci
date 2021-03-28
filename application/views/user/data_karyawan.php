@@ -49,7 +49,7 @@
 
 							</td>
 							<td><?php echo $datas->status;?></td>
-							<td><img style="width :100px" src="<?php echo base_url('assets/'.$datas->image)?>" alt=""></td>
+							<td><img style="width :100px;height:100px" src="<?php echo base_url('assets/'.$datas->image)?>" alt=""></td>
 							<td>
 								<div class="col-12">
 									<a href="<?php echo site_url('sistem/edit_data_user/'.$datas->id_user); ?>"> <button
@@ -188,7 +188,7 @@
 																	id="inputGroupFileAddon01">Images</span>
 															</div>
 															<div class="custom-file">
-																<input type="file" class="custom-file-input" id="inputGroupFile01" name="gambar"
+																<input type="file" class="form-control" id="inputGroupFile01" name="gambar"
 																	aria-describedby="inputGroupFileAddon01">
 																<label style="text-align:left" class="custom-file-label"
 																	for="inputGroupFile01">Choose...</label>

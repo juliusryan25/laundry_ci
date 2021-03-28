@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title ?></title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<script src="https://kit.fontawesome.com/dff8e24a70.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
@@ -19,6 +21,11 @@
                         <div class="card-body" style="margin: 14%;">
                           <center>
                           <h4 class="card-title"></h4>
+                          <?php if($this->session->flashdata('Failed')) { ?>
+                            <div class="alert alert-danger" role="alert">
+                               <i class="fas fa-exclamation-triangle"></i> <small><?php echo $this->session->flashdata('Failed') ?></small>
+                            </div>                                                         
+                          <?php } ?>
                           <form action="<?php echo site_url('sistem/aksi_login') ?>" method="post" enctype="multipart/form-data">
                           <div class="col-auto" >
                             <label class="sr-only" for="inlineFormInputGroup">Username</label>

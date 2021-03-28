@@ -12,7 +12,9 @@
 				class="btn btn-success col-12 mt-4 w-75" style="float:right"> Generate XLS <i class="fas fa-file"></i>
 			</a>
 		</div>
+		<div class="col-md-12 mt-4" id="alert">
 
+		</div>
 		<div class="col-md-12 mt-4">
 		  <div class="card p-md-3 shadow">
 			<div class="table-responsive mb-4">
@@ -496,6 +498,8 @@
 												'</tr>';
 										}
 										$('#targetdata').html(baris);
+										var alert_add = '<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Data Berhasil Di Tambahkan !</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+										$('#alert').html(alert_add);
 
 									}
 								});
@@ -657,7 +661,8 @@
 												'</tr>';
 										}
 										$('#targetdata').html(baris);
-
+										var alert_edit = '<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Data Berhasil Di Edit !</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+										$('#alert').html(alert_edit);
 									}
 								});
 							}
@@ -754,7 +759,9 @@
 												')" class="btn btn-warning w-75  col-12 mt-2"><i class="fas fa-file"></i> </a></td>' +
 												'</tr>';
 										}
+										var alert_hapus = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Data Berhasil Dihapus !</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
 										$('#targetdata').html(baris);
+										$('#alert').html(alert_hapus);
 
 									}
 								});

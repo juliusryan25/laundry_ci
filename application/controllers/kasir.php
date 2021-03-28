@@ -59,7 +59,7 @@ class kasir extends CI_Controller {
         $data['member'] = $this->modelsistem->get_member();
         $data['c_member'] = $this->modelsistem->count_member();
         $data['data_edit'] = $this->modelsistem->get_data_edit($id);
-        $this->load->view('indexkasir',$data);
+        $this->load->view('index/indexkasir',$data);
     }
 
     public function aksi_edit(){

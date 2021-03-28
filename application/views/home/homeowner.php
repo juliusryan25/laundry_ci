@@ -243,7 +243,14 @@
 													<center>
 														<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Rata-rata Pendapatan / Hari</div>
 														<div class="h5 mb-0 font-weight-bold text-gray-800">
-															<?php echo json_encode($total_transaksi_hari,JSON_NUMERIC_CHECK );?></div>
+															<?php $a = json_encode($total_transaksi_hari,JSON_NUMERIC_CHECK );
+																if ($a == '[{"Rp":null}]') {
+																	echo "0";
+																}else {
+																	echo json_encode($total_transaksi_hari,JSON_NUMERIC_CHECK );
+																}							
+
+															?></div>
 													</center>
 												</div>
 												<!-- <div class="col-auto">

@@ -54,12 +54,12 @@
         public function aksi_login(){
             $usernames = $this -> input->post('user');
             $passwords = $this -> input->post('pass');
-
+            // $pw = password_hash($passwords, PASSWORD_DEFAULT);
 
             $where = array (
                 'username' => $usernames,
-                // 'password' => $passwords
-                'password' => password_verify($passwords)
+                'password' => $passwords
+                // 'password' => password_verify($passwords)
             );
             $cek = $this ->modelsistem->cek_login("user",$where)->num_rows();
 
@@ -93,7 +93,9 @@
                
             }
             else {
-                echo "<script>alert('Username atau Password salah!');history.go(-1);</script>";
+                // echo "<script>alert('Username atau Password salah!');history.go(-1);</script>";
+                $this->session->set_flashdata('Failed','Username / Password Wrong!');
+                redirect(base_url().'sistem/login');
                 $this->session->sess_destroy();
                
             }
@@ -152,7 +154,7 @@
             $data['user'] = $this->modelsistem->get_user();
             $data['c_user'] = $this->modelsistem->count_user();
             $data['data_edit_user'] = $this->modelsistem->get_data_edit_user($id);
-            $this->load->view('index',$data);
+            $this->load->view('index/index',$data);
         }
 
         public function aksi_edit_user(){
@@ -217,7 +219,7 @@
             $data['member'] = $this->modelsistem->get_member();
             $data['c_member'] = $this->modelsistem->count_member();
             $data['data_edit'] = $this->modelsistem->get_data_edit($id);
-            $this->load->view('index',$data);
+            $this->load->view('index/index',$data);
         }
 
         public function aksi_edit(){
@@ -278,7 +280,7 @@
             $data['outlet'] = $this->modelsistem->get_member();
             $data['c_outlet'] = $this->modelsistem->count_member();
             $data['data_edit_outlet'] = $this->modelsistem->get_data_edit_outlet($id_outlet);
-            $this->load->view('index',$data,$judul);
+            $this->load->view('index/index',$data,$judul);
         }
 
         public function aksi_edit_outlet(){
@@ -340,7 +342,7 @@
             $data['paket'] = $this->modelsistem->get_paket();
             $data['c_paket'] = $this->modelsistem->count_paket();
             $data['data_edit_paket'] = $this->modelsistem->get_data_edit_paket($id_paket);
-            $this->load->view('index',$data);
+            $this->load->view('index/index',$data);
         }
 
         public function aksi_edit_paket(){
