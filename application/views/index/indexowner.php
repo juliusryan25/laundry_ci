@@ -55,6 +55,10 @@
 						$this->load->view('transaksi/transaksi_outlet');
 						
 					}
+					else if ($this->uri->segment(2) == "location_outlet") {
+						$this->load->view('outlet/location_outlet');
+						
+					}
 					?>
 			</div>
 		</div>

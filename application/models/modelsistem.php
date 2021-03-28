@@ -194,7 +194,9 @@ Class modelsistem extends CI_Model{
         'id_outlet' => "",
         'nama' => $this->input->post('namaout'),
         'alamat' => $this->input->post('alamat'),
-        'tlp' => $this->input->post('telepon')
+        'tlp' => $this->input->post('telepon'),
+        'long' => $this->input->post('long'),
+        'lat' => $this->input->post('lat')
 
     );
 

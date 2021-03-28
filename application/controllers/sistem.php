@@ -277,8 +277,8 @@
 
         public function edit_outlet($id_outlet){
             $judul['title'] = "Edit Outlet";
-            $data['outlet'] = $this->modelsistem->get_member();
-            $data['c_outlet'] = $this->modelsistem->count_member();
+            $data['outlet'] = $this->modelsistem->get_outlet();
+            $data['c_outlet'] = $this->modelsistem->count_outlet();
             $data['data_edit_outlet'] = $this->modelsistem->get_data_edit_outlet($id_outlet);
             $this->load->view('index/index',$data,$judul);
         }

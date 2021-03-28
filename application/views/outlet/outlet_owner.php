@@ -2,7 +2,8 @@
 	<div class="row">
 
 		<div class="col-1">
-			<a href="<?php echo site_url('owner/indexowner/homeowner'); ?>" class="btn btn-light shadow col-12 mt-4 w-75"><i class="fas fa-chevron-left"></i> </a>
+			<a href="<?php echo site_url('owner/indexowner/homeowner'); ?>"
+				class="btn btn-light shadow col-12 mt-4 w-75"><i class="fas fa-chevron-left"></i> </a>
 		</div>
 		<div class="col-8">
 			&nbsp&nbsp&nbsp&nbsp<h3>Outlet</h3>
@@ -12,29 +13,37 @@
 				style="float:right"> Generate XLS <i class="fas fa-file"></i> </a>
 		</div>
 		<div class="col-sm-12 mt-4">
-		  <div class="card p-md-3 shadow">
-			<div class="table-responsive mb-4">
-				<table id="example" class="table table-striped table-bordered" style="width:100%">
-					<thead>
-						<tr>
-							<td>ID_Outlet</td>
-							<td>Nama_Outlet</td>
-							<td>Alamat</td>
-							<td>No.Telp</td>
-							<!-- <td>Action</td> -->
-						</tr>
-					</thead>
-					<tbody>
-						<?php
+			<div class="card p-md-3 shadow">
+				<div class="table-responsive mb-4">
+					<table id="example" class="table table-striped table-bordered" style="width:100%">
+						<thead>
+							<tr>
+								<td>ID_Outlet</td>
+								<td>Nama_Outlet</td>
+								<td>Alamat</td>
+								<td>No.Telp</td>
+								<td>Location</td>
+								<!-- <td>Action</td> -->
+							</tr>
+						</thead>
+						<tbody>
+							<?php
               if ($c_outlet>0){
                 foreach ($outlet as $datas){
               ?>
-						<tr>
-							<td style="width:140px"><?php echo $datas->id_outlet;?></td>
-							<td><?php echo $datas->nama;?></td>
-							<td><?php echo $datas->alamat;?></td>
-							<td><?php echo $datas->tlp;?></td>
-							<!-- <td style="width:40px">
+							<tr>
+								<td style="width:140px"><?php echo $datas->id_outlet;?></td>
+								<td><?php echo $datas->nama;?></td>
+								<td><?php echo $datas->alamat;?></td>
+								<td><?php echo $datas->tlp;?></td>
+								<td>
+									<div class="col-12">
+										<a href="<?php echo site_url('owner/location_outlet/'.$datas->id_outlet); ?>">
+											<button class=" btn btn-primary btn-sm edit_data" style="width: 100%;"><i
+													class="fas fa-search"></i> View</button></a>
+									</div>
+								</td>
+								<!-- <td style="width:40px">
 								<center>
 									<div class="row">
 										<div class="col-12">
@@ -49,27 +58,28 @@
 									</div>
 								</center>
 							</td> -->
-						</tr>
-						<?php }
+							</tr>
+							<?php }
                 } else {
                   ?>
-						<tr>
-							<td colspan="8">
-								<center> Data Outlet kosong!</center>
-							</td>
-						</tr>
-						<?php
+							<tr>
+								<td colspan="8">
+									<center> Data Outlet kosong!</center>
+								</td>
+							</tr>
+							<?php
                 }
             ?>
-				</tbody>
+						</tbody>
+				</div>
 			</div>
-		   </div>
 		</div>
 	</div>
 
 	<!-- modal -->
 
-	<div class="modal fade" id="hapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="hapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header" style="background:red;color:white">
@@ -79,8 +89,8 @@
 					</button>
 				</div>
 				<div class="modal-body" style="text-align:center">
-					<center> <img src="<?php echo base_url(); ?>assets/image/seru.png" style="width:150px" class="card-img"
-							alt="..."></center><br>
+					<center> <img src="<?php echo base_url(); ?>assets/image/seru.png" style="width:150px"
+							class="card-img" alt="..."></center><br>
 					Are You Sure ? .....
 				</div>
 				<div class="modal-footer">
@@ -92,7 +102,8 @@
 		</div>
 	</div>
 
-	<div class="modal fade " id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade " id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
 		<div class="modal-dialog modal-xl" role="document">
 			<div class="modal-content">
 				<div class="modal-header bg-primary" style="color:white">
@@ -107,7 +118,8 @@
 							<div class="card shadow" style="max-width: 100%; margin-top: 1%;margin-bottom: 2%;">
 								<div class="row no-gutters">
 									<div class="col-md-4" style="margin-top: 3%;">
-										<img src="<?php echo base_url(); ?>assets/image/lon.png" class="card-img" alt="...">
+										<img src="<?php echo base_url(); ?>assets/image/lon.png" class="card-img"
+											alt="...">
 									</div>
 									<div class="col-md-8" style="background:linear-gradient(to right,white,white);">
 										<div class="card-body" style="margin: 2%;">
@@ -116,39 +128,44 @@
 													<center>
 														<h4 class="card-title " style="color: black;">Outlet</h4>
 												</div>
-												<form action="<?php echo site_url('sistem/simpan_data_outlet');?>" method="post"
-													enctype="multipart/form-data">
+												<form action="<?php echo site_url('sistem/simpan_data_outlet');?>"
+													method="post" enctype="multipart/form-data">
 													<div class="col-12">
 														<label class="sr-only" for="inlineFormInputGroup">name</label>
 														<div class="input-group mb-2">
 															<div class="input-group-prepend">
-																<div class="input-group-text" style="width: 115px;">Nama Outlet</div>
+																<div class="input-group-text" style="width: 115px;">Nama
+																	Outlet</div>
 															</div>
-															<input type="text" class="form-control" id="inlineFormInputGroup" name="namaout"
-																placeholder="">
+															<input type="text" class="form-control"
+																id="inlineFormInputGroup" name="namaout" placeholder="">
 														</div>
 													</div>
 													<div class="col-12">
 														<label class="sr-only" for="inlineFormInputGroup">tlp</label>
 														<div class="input-group mb-2">
 															<div class="input-group-prepend">
-																<div class="input-group-text" style="width: 115px;">No.Telp</div>
+																<div class="input-group-text" style="width: 115px;">
+																	No.Telp</div>
 															</div>
-															<input type="text" class="form-control" id="inlineFormInputGroup" name="telepon"
-																placeholder="">
+															<input type="text" class="form-control"
+																id="inlineFormInputGroup" name="telepon" placeholder="">
 														</div>
 													</div>
 													<div class="col-auto">
 														<label class="sr-only" for="inlineFormInputGroup">alamat</label>
 														<div class="input-group mb-2">
 															<div class="input-group-prepend">
-																<div class="input-group-text" style="width: 115px;">Alamat</div>
+																<div class="input-group-text" style="width: 115px;">
+																	Alamat</div>
 															</div>
-															<textarea name="alamat" id="" cols="66.9" style="border-radius:5px" rows="5"></textarea>
+															<textarea name="alamat" id="" cols="66.9"
+																style="border-radius:5px" rows="5"></textarea>
 														</div>
 
 														<button type="submit" name="save" class="btn btn-primary"><img
-																src="<?php echo base_url();?>assets/image/save.png" alt=""> Save</button>&nbsp&nbsp&nbsp
+																src="<?php echo base_url();?>assets/image/save.png"
+																alt=""> Save</button>&nbsp&nbsp&nbsp
 
 														</center>
 												</form>

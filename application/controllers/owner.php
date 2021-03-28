@@ -53,4 +53,12 @@ class owner extends CI_Controller {
         $judul['title'] = "member";
         $this->load->view('memberowner',$judul);
     }
+
+    public function location_outlet($id_outlet){
+        // $judul['title'] = "Edit Outlet";
+        $data['outlet'] = $this->modelsistem->get_outlet();
+        $data['c_outlet'] = $this->modelsistem->count_outlet();
+        $data['data_location_outlet'] = $this->modelsistem->get_data_edit_outlet($id_outlet);         
+        $this->load->view('index/indexowner',$data);
+    }
 }

@@ -139,7 +139,7 @@
 																placeholder="">
 														</div>
 													</div>
-													<div class="col-auto">
+													<div class="col-12">
 														<label class="sr-only" for="inlineFormInputGroup">alamat</label>
 														<div class="input-group mb-2">
 															<div class="input-group-prepend">
@@ -147,13 +147,32 @@
 															</div>
 															<textarea name="alamat" id="" cols="66.9" style="border-radius:5px" rows="5"></textarea>
 														</div>
-
-														<button type="submit" name="save" class="btn btn-primary"><img
+													</div>
+													<div class="col-12">
+														<label class="sr-only" for="inlineFormInputGroup">Long</label>
+														<div class="input-group mb-2">
+															<div class="input-group-prepend">
+																<div class="input-group-text" style="width: 115px;">Long</div>
+															</div>
+															<input type="text" class="form-control" id="inlineFormInputGroup" name="long"
+																placeholder="longitude">
+														</div>
+													</div>
+													<div class="col-12">
+														<label class="sr-only" for="inlineFormInputGroup">Lat</label>
+														<div class="input-group mb-2">
+															<div class="input-group-prepend">
+																<div class="input-group-text" style="width: 115px;">Lat</div>
+															</div>
+															<input type="text" class="form-control" id="inlineFormInputGroup" name="lat"
+																placeholder="latitude">
+														</div>
+													</div>
+													<div class="col-12 justify-content-center">
+													<button type="submit" name="save" class="btn btn-primary"><img
 																src="<?php echo base_url();?>assets/image/save.png" alt=""> Save</button>&nbsp&nbsp&nbsp
-
-														</center>
-												</form>
-											</div>
+													</div>																																							
+												</form>											
 										</div>
 									</div>
 								</div>
