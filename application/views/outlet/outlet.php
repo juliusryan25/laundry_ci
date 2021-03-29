@@ -1,6 +1,14 @@
+<style type="text/css"> 
+ #mapa {
+ /* margin: 10px; */
+ width: 100%;
+ height: 300px; 
+ padding: 10px;
+ }
+ </style>
+ <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAA7A7Eu8gZ_mTslgWnRR9TGRQByQgPDcFg0q0wOb9u6rRtBOFyKBQD4QgfPHRxBFGL7JviJdz_jAlHfw" type="text/javascript"></script>
 <main role="main" class="container-fluid" style="margin-top: 0%;">
 	<div class="row">
-
 		<div class="col-2">
 			&nbsp&nbsp&nbsp&nbsp<h3>Outlet</h3>
 		</div>
@@ -148,23 +156,26 @@
 															<textarea name="alamat" id="" cols="66.9" style="border-radius:5px" rows="5"></textarea>
 														</div>
 													</div>
-													<div class="col-12">
+													<div class="col-12 mb-2">
+													<div id="mapa"></div>
+													</div>
+													<div class="col-6">
 														<label class="sr-only" for="inlineFormInputGroup">Long</label>
 														<div class="input-group mb-2">
 															<div class="input-group-prepend">
 																<div class="input-group-text" style="width: 115px;">Long</div>
 															</div>
-															<input type="text" class="form-control" id="inlineFormInputGroup" name="long"
+															<input type="text" class="form-control" id="long" name="long"
 																placeholder="longitude">
 														</div>
 													</div>
-													<div class="col-12">
+													<div class="col-6">
 														<label class="sr-only" for="inlineFormInputGroup">Lat</label>
 														<div class="input-group mb-2">
 															<div class="input-group-prepend">
 																<div class="input-group-text" style="width: 115px;">Lat</div>
 															</div>
-															<input type="text" class="form-control" id="inlineFormInputGroup" name="lat"
+															<input type="text" class="form-control" id="lat" name="lat"
 																placeholder="latitude">
 														</div>
 													</div>
@@ -180,3 +191,26 @@
 						</div>
 					</div>
 </main>
+<script type="text/javascript">
+    if (GBrowserIsCompatible()) 
+    {
+        map = new GMap2(document.getElementById("mapa"));
+        map.addControl(new GLargeMapControl());
+        map.addControl(new GMapTypeControl(3));    
+        map.setCenter( new GLatLng(-0.789275,113.921327), 5,0);
+        
+        // GEvent.addListener(map,'mousemove',function(point)
+        // {
+        //     document.getElementById('latspan').innerHTML = point.lat()
+        //     document.getElementById('lngspan').innerHTML = point.lng()
+        //     // document.getElementById('latlong').innerHTML = point.lat() + ', ' + point.lng()                        
+        // });
+        
+        GEvent.addListener(map,'click',function(overlay,point)
+        {
+            // document.getElementById('latlongclicked').value = point.lat() + ', ' + point.lng()
+            document.getElementById('lat').value = point.lat() 
+            document.getElementById('long').value = point.lng()
+        });
+    }
+</script>

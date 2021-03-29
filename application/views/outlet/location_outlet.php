@@ -27,8 +27,9 @@
 		<?php
             foreach($data_location_outlet as $e):?>
 		    <input type="hidden" name="long" id="long" value="<?php echo $e->long;?>">
-            <input type="hidden" name="lat" id="lat" value="<?php echo $e->lat;?>">                     		
-            
+            <input type="hidden" name="lat" id="lat" value="<?php echo $e->lat;?>"> 
+			<input type="hidden" name="lat" id="alamat" value="<?php echo $e->alamat;?>">                     		
+            <?php endforeach ?>
 		<div class="col-1">
 			<a href="<?php echo site_url('owner/indexowner/outlet_owner'); ?>"
 				class="btn btn-light shadow col-12 mt-4 w-75"><i class="fas fa-chevron-left"></i> </a>
@@ -46,12 +47,11 @@
     <script>
 
 function initMap() {
-    var lat1 = -6.385589;
-    var long1 =  106.830711;
+   
   // membuat objek untuk titik koordinat
   var location = {
-      lat: lat1, 
-      lng: long1
+      lat: Number(document.getElementById("lat").value), 
+      lng: Number(document.getElementById("long").value)
     };
   
   // membuat objek peta
@@ -61,16 +61,26 @@ function initMap() {
   });
 
   // mebuat konten untuk info window
-  var contentString = '<h2>Location!</h2>';
+  var contentString = String(document.getElementById("alamat").value);
 
   // membuat objek info window
-  var infowindow = new google.maps.InfoWindow({
+  const infowindow = new google.maps.InfoWindow({
     content: contentString,
     position: location
   });
+
+  const marker = new google.maps.Marker({
+    position: location,
+    map,
+    title: "Location!",
+  });
+
+  marker.addListener("click", () => {
+    infowindow.open(map, marker);
+  });
   
   // tampilkan info window pada peta
-  infowindow.open(map);
+//   infowindow.open(map);
 
   
 }
@@ -78,7 +88,7 @@ function initMap() {
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?callback=initMap">
 </script>
-<?php endforeach ?>
+
 </body>
 
 </html>

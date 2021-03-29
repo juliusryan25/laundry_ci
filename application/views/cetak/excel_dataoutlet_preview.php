@@ -12,7 +12,9 @@
                             <td scope="col">Id_outlet</td>                           
                             <td scope="col">Nama_outlet</td>
                             <td scope="col">Alamat</td>
-                            <td scope="col">No.Telp</td>                                                        
+                            <td scope="col">No.Telp</td> 
+                            <td scope="col">Long</td> 
+                            <td scope="col">Lat</td>                                                        
                         </tr>
                     </thead>
 
@@ -25,7 +27,9 @@
                                 <td><?php echo $datas->id_outlet;?></td>
                                 <td><?php echo $datas->nama;?></td>
                                 <td><?php echo $datas->alamat;?></td>
-                                <td><?php echo $datas->tlp;?></td>                                
+                                <td><?php echo $datas->tlp;?></td> 
+                                <td><?php echo $datas->long;?></td>   
+                                <td><?php echo $datas->lat;?></td>                                  
                             </tr>
                         <?php } 
                         ?>
